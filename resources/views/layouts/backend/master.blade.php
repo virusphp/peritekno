@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <script>tinymce.init({ selector:'textarea' });</script> --}}
+    <!-- {{-- <script>tinymce.init({ selector:'textarea' });</script> --}} -->
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {{-- <title>{{ config('app.name', 'PeriTecno') }}</title> --}}
+    <title>{{ config('app.name', 'PeriTecno') }}</title>
     <title>PeriTecno</title>
 
     <!-- Bootstrap -->
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/jquery.dataTables.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/daiwabo.css') }}">
+   <link rel="stylesheet" href="{{ asset('css/daiwabo.css') }}">
   </head>
 
   <body class="nav-md">
@@ -32,11 +32,9 @@
   {{-- content --}}
   @yield('content')
   {{-- footer --}}
-  @include('layoutsbackend.partials.footer')
-
+  @include('layouts.backend.partials.footer')
       </div>
     </div>
-
   <!-- jQuery -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- Bootstrap -->
