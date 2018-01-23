@@ -24,15 +24,19 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-  @include('layouts.backend.partials._flash')
-  {{-- menu --}}
-  @include('layouts.backend.partials.sidemenu')
-  {{-- header --}}
-  @include('layouts.backend.partials.header')
-  {{-- content --}}
-  @yield('content')
-  {{-- footer --}}
-  @include('layouts.backend.partials.footer')
+	  @include('layouts.backend.partials._flash')
+
+	  {{-- menu --}}
+	  @include('layouts.backend.partials.sidemenu')
+
+	  {{-- header --}}
+	  @include('layouts.backend.partials.header')
+
+	  {{-- content --}}
+	  @yield('content')
+
+	  {{-- footer --}}
+	  @include('layouts.backend.partials.footer')
       </div>
     </div>
   <!-- jQuery -->

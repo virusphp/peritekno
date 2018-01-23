@@ -1,0 +1,22 @@
+/**
+ * CSS PeriTechno 
+ */
+
+
+
+/**
+ * Navbar atas
+ */
+
+.navbar-pink {
+	background-color: #fd85e3;    
+	border-color: #d3e0e9;
+}
+
+/**
+ * ul / li
+ */
+
+.btn-xs  a.btn-group:hover{
+	background-color: #000;
+}

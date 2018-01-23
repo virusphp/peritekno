@@ -46,7 +46,9 @@
     </div>
 
   @include('layouts.patrials.header')
+
   @yield('content')
+
   @include('layouts.patrials.footer')
 <!-- footer -->
 

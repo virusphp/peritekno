@@ -11,17 +11,14 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('blog.index');
 });
 
-Route::get('/blog', function () {
-    return view('blog.index');
+Route::get('/blog', function() {
+	return view('blog.coba');
 });
 
 Route::get('/blog/detailPost', function () {
     return view('blog.detailPost');
 });
 
-Route::get('/blog/Table', function () {
-    return view('blog.Table');
-});
