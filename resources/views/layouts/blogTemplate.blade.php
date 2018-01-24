@@ -52,34 +52,74 @@
                 </div>
             </div>
         </nav>
-
-		<!-- Header Title Jumroon -->
-		<div class="jumbotron">
-		  <div class="container">
-			<h2 class="text-center">Peri Techno Adalah</h2>
-			<p class="text-center">Sebuah wadah untuk berbagi informasi baik teknologi maupun mengenai hal sekitar anda yang dapat bermanfaat untuk kita semua, Jika anda tertarik untuk membagikan segelintir informasi penting untuk warga sekitar maka anda sudah membantu mencerdaskan bangsa kita akan informasi yang anda berikan</p>
-			<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">Berbagung</a></p>
-		  </div>
-		</div>
-
-		<div class="alert alert-info text-center" role="alert"><button class="btn btn-xs btn-info">Info</button> Berita Terbaru Seputar Informasi dan Teknologi</div>
-
+		
 		<div id="app">
+		<!-- Header Title Jumroon -->
+			<div class="jumbotron">
+			  <div class="container">
+				<h2 class="text-center">Peri Techno Adalah</h2>
+				<p class="text-center">Sebuah wadah untuk berbagi informasi baik teknologi maupun mengenai hal sekitar anda yang dapat bermanfaat untuk kita semua, Jika anda tertarik untuk membagikan segelintir informasi penting untuk warga sekitar maka anda sudah membantu mencerdaskan bangsa kita akan informasi yang anda berikan</p>
+				<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">Berbagung</a></p>
+			  </div>
+			</div>
+
+			<div class="alert alert-info text-center" role="alert"><button class="btn btn-xs btn-info">Info</button> Berita Terbaru Seputar Informasi dan Teknologi</div>
+
 			<div class="col-md-12">
-				<div class="container">
-					<div class="panel panel-info">
-					  <div class="panel-body panel-info">
-						Basic panel example
-					  </div>
-					</div>	
-				</div>
+
+				<div class="col-md-4">
+					<div class="panel big-menu">
+						<div class="panel-body">
+							<p class="text-center"><a href="#">Blog</a></p>
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-4">
+					<div class="panel big-menu">
+						<div class="panel-body">
+							<p class="text-center"><a href="#">Artikel</a></p>
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-4">
+					<div class="panel big-menu">
+						<div class="panel-body">
+							<p class="text-center"><a href="#">Bacaan</a></p>
+						</div>
+					</div>
+				</div>	
+
 			</div>
 		</div>
 
+			<div class="clearfix"></div>
+			<hr>
 
+			{{-- Content --}}
+			<div class="col-md-12">
+				<div class="col-lg-4">
+					<img src="#"></img>
+					<p class="text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+				</div>
 
-        @yield('content')
+				<div class="col-lg-4">
+					<img src="#"></img>
+					<p class="text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+				</div>
 
+				<div class="col-lg-4">
+					<img src="#"></img>
+					<p class="text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+					<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+				</div>
+
+		</div>
+		
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

@@ -20,3 +20,54 @@
 .btn-xs  a.btn-group:hover{
 	background-color: #000;
 }
+
+
+/**
+ * Jumron
+ */
+
+.jumbotron {
+	margin-bottom: 1px;
+}
+
+/**
+ * Panel Panel
+ */
+.panel, p, a {
+	padding: 1px;
+	margin-bottom: 1px;
+}
+
+.big-menu {
+	color: #fd85e3;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #fd85e3;
+	padding: 1px;
+}
+
+.big-menu:hover {
+	color: #fd85e3;
+	border-bottom: 2px solid #fd85e3;
+	margin-bottom: 1px;
+	padding: 0;
+}
+
+.panel-body {
+	margin-bottom: 1px;
+	padding: 1px;
+}
+
+.panel .big-menu {
+	padding: 1px;
+}
+
+/**
+ * Paragraf P
+ */
+
+p.text-center a {
+	color: #fd85e3;
+	text-decoration: none;
+	font-size: 20px;
+}
+
