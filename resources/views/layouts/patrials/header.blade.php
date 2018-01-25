@@ -8,24 +8,16 @@
             <div class="col-md-6">
                 <div class="language">
                     <ul class="flat-information">
-                        <li class="email"><a href="mailto:AlitStudios@gmail.com">AlitStudios@gmail.com</a></li>
-                        <li class="phone"><a href="61383766284">+61 3 8376 6284</a></li>
-                        <li class="current"><a href="#">English</a>
-                            <ul>
-                                <li class="en"><a href="#">English</a></li>
-                                <li class="ge"><a href="#">German</a></li>
-                                <li class="pl"><a href="#">Polish</a></li>
-                                <li class="ru"><a href="#">Russian</a></li>
-                            </ul>
-                        </li>
+                        <li class="email"><a href="mailto:AlitStudios@gmail.com">PeriTechno@gmail.com</a></li>
+                        <li class="phone"><a href="62082220801333">+62 822 0801 333</a></li>
                     </ul>
                 </div><!-- /.language -->
             </div><!-- /.col-md-6 -->
             <div class="col-md-6">
                 <div class="top-navigator">
                     <ul>
-                        <li><a href="{{ '/register' }}">Register</a></li>
-                        <li><a href="{{ '/login' }}">Login</a></li>
+                        <li><a href="{{ '/register' }}">Gabung</a></li>
+                        <li><a href="{{ '/login' }}">Masuk</a></li>
                     </ul>
                 </div><!-- /.top-navigator -->
             </div><!-- /.col-md-6 -->
@@ -41,7 +33,7 @@
                 <div class="col-md-2">
                     <div id="logo" class="logo">
                         <a href="index.html" rel="home">
-                            <img src="images/logo.png" alt="image">
+                            <img src="f-n/images/logo.png" alt="image">
                         </a>
                     </div><!-- /.logo -->
                     <div class="btn-menu">
@@ -56,7 +48,7 @@
                                 <li class="home">
                                     <a href="{{ url ('/')}}">Home</a>
                                 </li>
-                                <li><a href="course.html">Catatan</a>
+                                <li><a href="course.html">Tutorial</a>
                                     <ul class="submenu">
                                         <li><a href="{{ url('/blog') }}">PHP</a></li>
                                         <li><a href="{{ url('/blog') }}">Design</a></li>
@@ -66,7 +58,7 @@
                                     </ul><!-- /.submenu -->
                                 </li>
 
-                                <li><a href="blog.html">Tutorial </a>
+                                <li><a href="blog.html">Artikel</a>
                                     <ul class="submenu right-sub-menu">
                                       <li><a href="{{ url('/tutorial') }}">PHP</a></li>
                                       <li><a href="{{ url('/tutorial') }}">Design</a></li>
@@ -75,7 +67,7 @@
                                       <li><a href="{{ url('/tutorial') }}">Instalasi</a></li>
                                     </ul><!-- /.submenu -->
                                 </li>
-                                <li><a href="{{ url ('/shop') }}">Shop</a></li>
+                                <li><a href="{{ url('/about') }}">Bacaan </a></li>
                                 <li><a href="{{ url('/about') }}">About Us</a></li>
                             </ul><!-- /.menu -->
                         </nav><!-- /.mainnav -->

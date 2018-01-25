@@ -41,16 +41,16 @@ $(document).ready(function() {
                         '<a href="#" class="sw-dark">WIDE</a>' +
                     '</div>'+                      
                     '<div class="sw-pattern pattern"><h3>Background pattern:</h3>'+
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/1.png"><img src="images/pattern/1.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/2.png"><img src="images/pattern/2.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/3.png"><img src="images/pattern/3.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/4.png"><img src="images/pattern/4.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/5.png"><img src="images/pattern/5.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/6.png"><img src="images/pattern/6.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/7.png"><img src="images/pattern/7.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/8.png"><img src="images/pattern/8.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/9.png"><img src="images/pattern/9.png" alt="image"></a>' +
-                        '<a href="#" class="sw-pattern" data-image="images/pattern/10.png"><img src="images/pattern/10.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/1.png"><img src="f-n/images/pattern/1.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/2.png"><img src="f-n/images/pattern/2.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/3.png"><img src="f-n/images/pattern/3.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/4.png"><img src="f-n/images/pattern/4.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/5.png"><img src="f-n/images/pattern/5.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/6.png"><img src="f-n/images/pattern/6.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/7.png"><img src="f-n/images/pattern/7.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/8.png"><img src="f-n/images/pattern/8.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/9.png"><img src="f-n/images/pattern/9.png" alt="image"></a>' +
+                        '<a href="#" class="sw-pattern" data-image="f-n/images/pattern/10.png"><img src="f-n/images/pattern/10.png" alt="image"></a>' +
                     '</div>'+               
                   '<div class="clearfix"></div>'+
                '</div>'+
@@ -88,7 +88,7 @@ $(document).ready(function() {
     setColor: function(e) {
         var t = switchColor.colorObj;
         $.cookie(t.colorCookie, e);
-        $(t.headLink).attr("href", "stylesheets/colors/" + e + ".css");
+        $(t.headLink).attr("href", "f-n/stylesheets/colors/" + e + ".css");
         
         $(t.switchClass).removeClass(t.currentClass);
         $("#" + e).addClass(t.currentClass);

@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="widget widget-text">
-                        <img src="images/logo-f1.png" alt="logo-footer">
+                        <img src="f-n/images/logo-f1.png" alt="logo-footer">
                     </div>
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->
@@ -15,9 +15,9 @@
                     <div class="sidebar-inner-footer">
                         <div class="widget widget-infomation">
                             <ul class="flat-information">
-                                <li class="email"><a href="mailto:AlitStudios@gmail.com">AlitStudios@gmail.com</a></li>
-                                <li class="phone"><a href="61383766284">+61 3 8376 6284</a></li>
-                                <li class="address">121 King Street, Melbourne  Victoria 3000 Australia</li>
+                                <li class="email"><a href="mailto:PeRiTechno@gmail.com">AlitStudios@gmail.com</a></li>
+                                <li class="phone"><a href="6282220801333">+62 8222 0801 333</a></li>
+                                <li class="address">Jl Kanfer 2 nomer 24 perumnas Slamaran</li>
 
                             </ul>
                         </div>
@@ -94,7 +94,7 @@
                 <div class="container-bottom">
                     <div class="col-md-6">
                         <div class="copyright">
-                            <p>© Copyright <a href="#">Alitstudio</a> 2015. All Rights Reserved.
+                            <p>© Copyright <a href="#">Peri Techno</a> 2018. All Rights Reserved.
                             </p>
                         </div>
                     </div><!-- /.col-md-6 -->

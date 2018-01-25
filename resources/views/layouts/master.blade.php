@@ -14,28 +14,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Bootstrap  -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('stylesheets/bootstrap.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/bootstrap.css') }}" >
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('stylesheets/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/style.css') }}">
 
     <!-- Responsive -->
-    <link rel="stylesheet" type="text/css" href="{{ ('stylesheets/responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/responsive.css') }}">
 
     <!-- Colors -->
-    <link rel="stylesheet" type="text/css" href="{{ ('stylesheets/colors/color1.css') }}" id="colors">
+    <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/colors/color3.css') }}" id="colors">
 
 	<!-- Animation Style -->
-    <link rel="stylesheet" type="text/css" href="{{ ('stylesheets/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/animate.css') }}">
 
     <!-- Favicon and touch icons  -->
-    <link href="icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
-    <link href="icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
-    <link href="icon/favicon.png" rel="shortcut icon">
+    <link href="f-n/icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
+    <link href="f-n/icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="f-n/icon/favicon.png" rel="shortcut icon">
 
     <!--[if lt IE 9]>
-        <script src="javascript/html5shiv.js"></script>
-        <script src="javascript/respond.min.js"></script>
+        <script src="f-njavascript/html5shiv.js"></script>
+        <script src="f-njavascript/respond.min.js"></script>
     <![endif]-->
 </head>
 <body class="header-sticky">
@@ -59,29 +59,29 @@
 
     </div><!-- /.box -->
 
-    <!-- Javascript -->
-    <script type="text/javascript" src="{{ asset ('javascript/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/jquery.easing.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/imagesloaded.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/jquery.isotope.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/owl.carousel.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/jquery-waypoints.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/jquery.flexslider-min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/jquery.magnific-popup.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/jquery.cookie.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/jquery.fitvids.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/jquery.mb.YTPlayer.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/parallax.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/switcher.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/jquery.sticky.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/smoothscroll.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('javascript/main.js') }}"></script>
+    <!-- f-njavascript -->
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.easing.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/imagesloaded.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.isotope.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/owl.carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery-waypoints.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.flexslider-min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.magnific-popup.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.cookie.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.fitvids.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.mb.YTPlayer.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/parallax.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/switcher.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.sticky.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/smoothscroll.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/main.js') }}"></script>
 
     <!-- Revolution Slider -->
-    <script type="text/javascript" src="{{ asset('javascript/jquery.themepunch.tools.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('javascript/jquery.themepunch.revolution.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('javascript/slider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.themepunch.tools.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.themepunch.revolution.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('f-n/javascript/slider.js') }}"></script>
     @yield('scripts')
 </body>
 </html>
