@@ -71,7 +71,7 @@
     <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.magnific-popup.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.cookie.js') }}"></script>
     <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.fitvids.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.mb.YTPlayer.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.mb.YTPlayer.js') }}"></script> -->
     <script type="text/javascript" src="{{ asset('f-n/javascript/parallax.js') }}"></script>
     <script type="text/javascript" src="{{ asset('f-n/javascript/switcher.js') }}"></script>
     <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.sticky.js') }}"></script>

@@ -10,15 +10,25 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+
 Route::get('/', function () {
-    return view('blog.index');
+    return view('blog.coba');
 });
 
 Route::get('/blog', function() {
-	return view('blog.coba');
+	return view('blog.index');
 });
 
 Route::get('/blog/detailPost', function () {
     return view('blog.detailPost');
 });
 
+Route::get('/blog/DataPost', function () {
+    return view('blog.Table');
+});
+
+Route::resource('category', 'CategoryController');
+
+Route::get('/home', 'HomeController@index')->name('home');
