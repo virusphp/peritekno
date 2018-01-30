@@ -5,7 +5,10 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Home<small>/ Category</small></h3>
+					<ul class="breadcrumb">
+						<li><a href="{{ route('home') }}">Home</a></li>
+						<li class="active">Categories</li>
+					</ul>
               </div>
 
               <div class="title_right">
@@ -24,9 +27,9 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>category</h2>
+                    <h2>Category</h2>
                     <ul class="nav navbar-right panel_toolbox">
-                       <a href="{{ route('category.create') }}"><button class="btn btn-primary btn-md">Tambah</button></a>
+                       <a href="{{ route('categories.create') }}"><button class="btn btn-primary btn-sm">Tambah</button></a>
                     </ul>
                     <div class="clearfix"></div>
                   </div>

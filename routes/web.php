@@ -24,6 +24,6 @@ Route::get('/blog/DataPost', function () {
     return view('blog.table');
 });
 
-Route::resource('category', 'CategoryController');
+Route::resource('categories', 'CategoryController');
 
 Route::get('/home', 'HomeController@index')->name('home');

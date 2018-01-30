@@ -23,7 +23,7 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a href="{{ url('/home') }}"><i class="fa fa-home"></i> Home </a></li>
-                  <li><a href="{{ route('category.index') }}"><i class="fa fa-list"></i> Category </a></li>
+                  <li><a href="{{ route('categories.index') }}"><i class="fa fa-list"></i> Category </a></li>
                   <li><a href="{{ url('/blog/DataPost') }}"><i class="fa fa-sticky-note"></i> Artikel </a></li>
               </div>
             </div>

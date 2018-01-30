@@ -3,6 +3,14 @@
 		<div class="right_col" role="main">
           <div class="">
             <div class="page-title"> </div>
+            	<div class="title_left">
+					<ul class="breadcrumb">
+						<li><a href="{{ route('home') }}">Home</a></li>
+						<li><a href="{{ route('categories.index') }}">Categories</a></li>
+						<li class="active">Create</li>
+					</ul>
+            	</div>
+			
             <div class="clearfix"></div>
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
@@ -16,30 +24,30 @@
                   </div>
                   <div class="x_content">
                     <br />
-					               {!! Form::open(['route'=>'category.store', 'class'=> 'form-horizontal form-label-left']) !!}
-												 <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
- 												 		{!! Form::label('title','Name',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
-												 			<div class="col-md-6 col-sm-6 col-xs-12">
- 												 				{!! Form::text('name', null, ['class' => 'form-control col-md-7 col-xs-12']) !!}
- 											 					{!! $errors->first('name', '<p class="help-block">:message</p>') !!}
-										 					</div>
-									 				</div>
-													<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-  												 		{!! Form::label('title','Parent id',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
- 												 			<div class="col-md-6 col-sm-6 col-xs-12">
-  												 				{!! Form::text('parent_id', null, ['class' => 'form-control col-md-7 col-xs-12']) !!}
-  											 					{!! $errors->first('parent_id', '<p class="help-block">:message</p>') !!}
- 										 					</div>
- 									 				</div>
+					{!! Form::open(['route'=>'categories.store', 'class'=> 'form-horizontal form-label-left']) !!}
+						<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+								{!! Form::label('title','Name',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										{!! Form::text('name', null, ['class' => 'form-control col-md-7 col-xs-12']) !!}
+										{!! $errors->first('name', '<p class="help-block">:message</p>') !!}
+									</div>
+							</div>
+							<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
+								{!! Form::label('title','Parent id',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										{!! Form::text('parent_id', null, ['class' => 'form-control col-md-7 col-xs-12']) !!}
+										{!! $errors->first('parent_id', '<p class="help-block">:message</p>') !!}
+									</div>
+							</div>
 
-													<div class="ln_solid"></div>
-														<div class="form-group">
-															<div class="col-md-2 col-sm-2 col-xs-12 col-md-offset-3">
- 															{!! Form::reset('Reset', ['class' => 'btn btn-warning']) !!}
- 															{!! Form::submit(isset($data) ? 'Update' : 'Simpan', ['class' => 'btn btn-primary']) !!}
-													</div>
-												</div>
-					               {!! Form::close() !!}
+							<div class="ln_solid"></div>
+								<div class="form-group">
+									<div class="col-md-2 col-sm-2 col-xs-12 col-md-offset-3">
+									{!! Form::reset('Reset', ['class' => 'btn btn-warning']) !!}
+									{!! Form::submit(isset($data) ? 'Update' : 'Simpan', ['class' => 'btn btn-primary']) !!}
+							</div>
+						</div>
+				   {!! Form::close() !!}
                   </div>
                 </div>
               </div>
