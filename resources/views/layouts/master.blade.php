@@ -6,7 +6,7 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Aquarius - Educational HTML Template</title>
+    <title>PERITECHNO</title>
 
     <meta name="author" content="themesflat.com">
 
@@ -31,7 +31,7 @@
     <!-- Favicon and touch icons  -->
     <link href="f-n/icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
     <link href="f-n/icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
-    <link href="f-n/icon/favicon.png" rel="shortcut icon">
+    <link href="f-n/icon/logo.png" rel="shortcut icon">
 
     <!--[if lt IE 9]>
         <script src="f-njavascript/html5shiv.js"></script>

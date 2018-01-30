@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-title-heading">
-                        <h1 class="title">Welcome To Our Blog</h1>
+                        <h1 class="title">SELAMAT DATANG DI PERITECHNO</h1>
                         <div class="breadcrumbs">
                             <ul>
                                 <li><a href="{{ url('/') }}">Home</a></li>

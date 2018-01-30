@@ -12,12 +12,7 @@
 */
 Auth::routes();
 
-
-Route::get('/', function () {
-    return view('blog.coba');
-});
-
-Route::get('/blog', function() {
+Route::get('/', function() {
 	return view('blog.index');
 });
 
@@ -26,7 +21,7 @@ Route::get('/blog/detailPost', function () {
 });
 
 Route::get('/blog/DataPost', function () {
-    return view('blog.Table');
+    return view('blog.table');
 });
 
 Route::resource('category', 'CategoryController');

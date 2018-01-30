@@ -59,10 +59,11 @@
                             <div class="remember">
                                 <input type="checkbox" {{ old('remember') ? 'checked' : '' }} name="checked" id="checked" class="css-checkbox" checked="checked"/><label for="check3" class="css-label">Remember me</label>
                             </div>
+                        </div>
                             <div class="forgot">
                                 <a href="{{ route('password.request') }}">I forgot my password</a>
                             </div>
-                        </div>
+                        
                         <div class="create-account">
                             <p>Not registered? No problem</p>
                             <div class="link-submit-wrap">

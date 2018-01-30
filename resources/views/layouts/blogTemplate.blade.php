@@ -52,7 +52,7 @@
                 </div>
             </div>
         </nav>
-		
+
 		<div id="app">
 		<!-- Header Title Jumroon -->
 			<div class="jumbotron">
@@ -73,21 +73,21 @@
 							<p class="text-center"><a href="#">Blog</a></p>
 						</div>
 					</div>
-				</div>	
+				</div>
 				<div class="col-md-4">
 					<div class="panel big-menu">
 						<div class="panel-body">
 							<p class="text-center"><a href="#">Artikel</a></p>
 						</div>
 					</div>
-				</div>	
+				</div>
 				<div class="col-md-4">
 					<div class="panel big-menu">
 						<div class="panel-body">
 							<p class="text-center"><a href="#">Bacaan</a></p>
 						</div>
 					</div>
-				</div>	
+				</div>
 
 			</div>
 
@@ -123,7 +123,7 @@
 				Paginate
 			</div>
 		</div>
-		
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

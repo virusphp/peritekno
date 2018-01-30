@@ -7,7 +7,7 @@
     <!-- {{-- <script>tinymce.init({ selector:'textarea' });</script> --}} -->
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'PeriTecno') }}</title>
+    <title>{{ config('app.name', 'PERITECHNO') }}</title>
     <title>PeriTecno</title>
 
     <!-- Bootstrap -->

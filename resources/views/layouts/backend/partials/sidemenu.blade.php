@@ -8,7 +8,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="{{ asset ('images/admin.png')}}" alt="..." class="img-circle profile_img">
+                <img src="{{ asset ('f-n/images/admin.png')}}" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -23,13 +23,8 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a href="{{ url('/home') }}"><i class="fa fa-home"></i> Home </a></li>
-                  <li><a><i class="fa fa-file-text"></i>Blog<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="">Category</a></li>
-                      <li><a href="">Post</a></li>
-                    </ul>
-                  </li>
-                </ul>
+                  <li><a href="{{ route('category.index') }}"><i class="fa fa-list"></i> Category </a></li>
+                  <li><a href="{{ url('/blog/DataPost') }}"><i class="fa fa-sticky-note"></i> Artikel </a></li>
               </div>
             </div>
             <!-- /sidebar menu -->
