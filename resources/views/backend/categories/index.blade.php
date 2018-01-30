@@ -35,7 +35,7 @@
                   </div>
                   <div class="x_content">
 
-                  @include('backend.categories.table');
+                  @include('backend.categories.table')
 
                   </div>
                 </div>
