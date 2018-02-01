@@ -24,7 +24,7 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|unique:categories,name',
+            'name'      => 'required',
             'parent_id' => 'required'
         ];
     }
@@ -33,7 +33,6 @@ class CategoryRequest extends FormRequest
     {
       return[
             'name.required'      => 'Nama Category Dilarang Kosong',
-            'name.unique'        => 'Category Sudah Ada',
             'parent_id.required' => 'Parent Id Dilarang Kosong',
             ];
     }

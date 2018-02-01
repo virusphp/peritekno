@@ -1,79 +1,64 @@
-@extends('layouts.master')
-@section('content')
-<!-- Page title -->
-<div class="page-title parallax parallax1">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="page-title-heading">
-                    <h1 class="title">Login</h1>
-                    <div class="breadcrumbs">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li>login</li>
-                        </ul>
-                    </div>
-                </div><!-- /.page-title-captions -->
 
-            </div><!-- /.col-md-12 -->
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</div><!-- /.page-title -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Login -->
-<div class="flat-row pad-top90px">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="flat-login">
-                    <form class="flat-contact-form border-white border-large" id="contactform5" method="POST" action="{{ route('login') }}">
-                      {{ csrf_field() }}
+    <title>peritechno</title>
 
-                        <div class="field clearfix">
-                            <div class="wrap-type-input">
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <p>Username or email address *</p>
-                                    <input type="email" value="{{ old('email') }}"  tabindex="1" name="email" id="email" required autofocus>
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <p>Password *</p>
-                                    <input type="password" value="" tabindex="2" name="password" id="password" required autofocus>
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="submit-wrap">
-                            <button>login</button>
-                        </div>
-                        <div class="option-login">
-                            <div class="remember">
-                                <input type="checkbox" {{ old('remember') ? 'checked' : '' }} name="checked" id="checked" class="css-checkbox" checked="checked"/><label for="check3" class="css-label">Remember me</label>
-                            </div>
-                        </div>
-                            <div class="forgot">
-                                <a href="{{ route('password.request') }}">I forgot my password</a>
-                            </div>
-                        
-                        <div class="create-account">
-                            <p>Not registered? No problem</p>
-                            <div class="link-submit-wrap">
-                                <a href="{{ '/register' }}">create an account</a>
-                            </div>
-                        </div>
-                    </form><!-- /.comment-form -->
-                </div><!-- /.flat-login -->
-            </div><!-- /.col-md-6 .col-md-offset-3 -->
-        </div><!-- /.row -->
-    </div><!-- /.container --><br>
+    <!-- Bootstrap -->
+    <link href="{{ asset('b-n/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('b-n/font-awesome/css/font-awesome.min.css') }}">
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" href="{{ asset('b-n/css/custom.min.css') }}">
+  </head>
 
-@endsection
+  <body class="login">
+    <div>
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form method="POST" action="{{ route('login') }}">
+              {{ csrf_field() }}
+              <img src="{{ asset('f-n/images/logo1.png')}}" with="80px" height="80px" alt="">
+              <h1>Silahkan Masuk</h1>
+              <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus />
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+              </div>
+               <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                <input type="password" class="form-control" name="password" placeholder="Password" required="" />
+                  @if ($errors->has('password'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('password') }}</strong>
+                      </span>
+                  @endif
+              </div>
+              <div class="buttons">
+               <button type="submit" class="btn btn-success btn-lg">Login</button>
+                <a class="reset_pass" href="#">Lost your password?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa"></i>peritechno</h1>
+                  <p>©2017 All Rights Reserved. peritechno Privacy and Terms</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>

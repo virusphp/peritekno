@@ -33,7 +33,7 @@
                 <div class="col-md-2">
                     <div id="logo" class="logo">
                         <a href="index.html" rel="home">
-                            <img src="f-n/images/logo1.png" width="60px" height="60px" border="2px" alt="image">
+                            <img src="{{ asset('f-n/images/logo1.png') }}" width="60px" height="60px" border="2px" alt="image">
                         </a>
                     </div><!-- /.logo -->
                     <div class="btn-menu">

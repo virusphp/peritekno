@@ -47,7 +47,7 @@
     <script src="{{ asset('b-n/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('b-n/js/dataTables.bootstrap.min.js') }}"></script>
     <!-- Custom Theme Scripts -->
-    <script src="{{ asset('b-n/js/custom.min.js') }}"></script>
+    
     {{-- tinymce --}}
     <script src="{{ asset('b-n/js/tinymce/jquery.tinymce.min.js') }}"></script>
     <script src="{{ asset('b-n/js/tinymce/tinymce.min.js') }}"></script>
@@ -55,14 +55,9 @@
 <!-- Konfigurasi Standar -->
     <script type="text/javascript">
     tinymce.init({
-        selector: "textarea#content"
+        selector: "textarea#body"
     });
-</script>
-<script type="text/javascript">
-    tinymce.init({
-        selector: "textarea#title"
-    });
-</script>
+  </script>
 	@yield('scripts')
   </body>
 </html>

@@ -12,7 +12,7 @@
                         <div class="breadcrumbs">
                             <ul>
                                 <li><a href="index.html">Home</a></li>
-                                <li>All Course 2</li>
+                                <li>Detail Post</li>
                             </ul>
                         </div>
                     </div><!-- /.page-title-captions -->
@@ -30,10 +30,10 @@
                     <div class="col-md-9">
                         <article class="entry">
                             <div class="feature-post">
-                                <img src="{{ asset ('images/blogs/2.jpeg') }}" alt="image">
+                                <img src="{{ $detailpost->ImagePath }}" alt="image">
                             </div><!-- /.feature-post -->
                             <div class="main-post">
-                                <h2 class="title-post"><a href="#">Designing healthcare apps with delight</a></h2>
+                                <h2 class="title-post"><a href="#">{{ $detailpost->title }}</a></h2>
                                 <div class="meta-post clearfix">
                                     <ul>
                                         <li class="post-author">
@@ -50,16 +50,7 @@
                                     <p>descripsion</p>
                                 </div>
                                 <div class="entry-post">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare dignissim felis nec malesuada. Nunc fringilla est nec nisi accumsan porta. Praesent non aliquam augue, sed aliquet elit. Nam pretium eu est sed tincidunt. Donec ullamcorper odio vitae felis tempor suscipit tincidunt nec orci. Duis vulputate, nunc id vestibulum imperdiet, dui neque mattis erat, maximus ornare nisi nisi tempor ante.</p>
-                                    <p>Cras feugiat sodales arcu. Sed id luctus purus. Aenean tristique risus id sem sollicitudin elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Mauris viverra quis velit ac lobortis. Donec fringilla rhoncus magna. Maecenas elit lorem, tincidunt non gravida sed, consectetur sed nunc. Suspendisse pretium elit ac viverra faucibus.</p>
-
-                                    <ul>
-                                        <li>Pellentesque placerat, ex ac tempor convallis</li>
-                                        <li>Orci arcu vulputate sapien, vel pulvinar risus enim at libero. </li>
-                                        <li>Vivamus elementum vehicula sapien vitae tincidunt.</li>
-                                        <li>Fusce a felis sed leo porttitor cursus</li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare dignissim felis nec malesuada. Nunc fringilla est nec nisi accumsan porta. Praesent non aliquam augue, sed aliquet elit. Nam pretium eu est sed tincidunt. Donec ullamcorper odio vitae felis tempor suscipit tincidunt nec orci. Duis vulputate, nunc id vestibulum imperdiet, dui neque mattis erat, maximus ornare nisi nisi tempor ante.</p>
+                                  {{ $detailpost->body }}
                                 </div><!-- /.entry-post -->
                                 <ul class="flat-socials">
                                     <li>

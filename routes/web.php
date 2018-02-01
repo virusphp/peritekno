@@ -12,18 +12,15 @@
 */
 Auth::routes();
 
-Route::get('/', function() {
-	return view('blog.index');
-});
 
-Route::get('/blog/detailPost', function () {
-    return view('blog.detailPost');
-});
+Route::get('/', 'BlogController@blog')->name('blog');
 
-Route::get('/blog/DataPost', function () {
-    return view('blog.table');
-});
+Route::get('blog/detailpost/{slug}', [
+	'uses' => 'BlogController@detailpost',
+	'as'   => 'detailpost'
+]);
 
 Route::resource('categories', 'CategoryController');
+Route::resource('posts', 'PostController');
 
 Route::get('/home', 'HomeController@index')->name('home');

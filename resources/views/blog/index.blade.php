@@ -26,43 +26,16 @@
 
         <div class="wrap-blog-fullwidth">
             <div class="flat-grid margin20px clearfix">
-				{{-- Content Artikel --}}
+				@foreach($blogs as $blog)
                 <div class="flat-one-four">
                     <article class="entry">
                         <div class="feature-post">
-                            <a href="{{ url('/blog/detailPost') }}"><img src="{{ asset('f-n/images/blogs/2.jpeg') }}" alt="image"></a>
+                            <a href="{{ route('detailpost', $blog->slug) }}"><img src="{{ $blog->ImagePath }}" alt="image"></a>
                         </div><!-- /.feature-post -->
-                        <p class="entry-title"><a href="{{ url('/blog/detailPost') }}">Never stop learning with conference live streams and videos.</a></p>
+                        <p class="entry-title"><a href="{{ route('detailpost', $blog->slug) }}">{{ $blog->title }}</a></p>
                     </article><!-- /.entry -->
                 </div><!-- /.flat-one-four -->
-
-                <div class="flat-one-four">
-                    <article class="entry">
-                        <div class="feature-post">
-                            <a href="{{ url('/blog/detailPost') }}"><img src="{{ asset('f-n/images/blogs/2.jpeg') }}" alt="image"></a>
-                        </div><!-- /.feature-post -->
-                        <p class="entry-title"><a href="{{ url('/blog/detailPost') }}">Never stop learning with conference live streams and videos.</a></p>
-                    </article><!-- /.entry -->
-                </div><!-- /.flat-one-four -->
-
-                <div class="flat-one-four">
-                    <article class="entry">
-                        <div class="feature-post">
-                            <a href="{{ url('/blog/detailPost') }}"><img src="{{ asset('f-n/images/blogs/2.jpeg') }}" alt="image"></a>
-                        </div><!-- /.feature-post -->
-                        <p class="entry-title"><a href="{{ url('/blog/detailPost') }}">Never stop learning with conference live streams and videos.</a></p>
-                    </article><!-- /.entry -->
-                </div><!-- /.flat-one-four -->
-
-                <div class="flat-one-four">
-                    <article class="entry">
-                        <div class="feature-post">
-                            <a href="{{ url('/blog/detailPost') }}"><img src="{{ asset('f-n/images/blogs/2.jpeg') }}" alt="image"></a>
-                        </div><!-- /.feature-post -->
-                        <p class="entry-title"><a href="{{ url('/blog/detailPost') }}">Never stop learning with conference live streams and videos.</a></p>
-                    </article><!-- /.entry -->
-                </div><!-- /.flat-one-four -->
-
+        @endforeach
             </div><!-- /.flat-grid margin20px -->
         </div><!-- /.wrap-blog-fullwidth -->
 
@@ -70,18 +43,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="blog-pagination">
-                        <ul class="flat-pagination clearfix">
-                            <li class="prev">
-                                <a href="#"><i class="fa fa-angle-left"></i></a>
-                            </li>
-                            <li class="active">1</li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li class="next">
-                                <a href="#"><i class="fa fa-angle-right"></i></a>
-                            </li>
-                        </ul><!-- /.flat-pagination -->
+                        {{ $blogs->links() }}
                     </div><!-- /.blog-pagination -->
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->
