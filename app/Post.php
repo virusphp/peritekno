@@ -9,29 +9,34 @@ class Post extends Model
 {
     protected $fillable = ['author_id', 'title', 'slug', 'body', 'image'];
 
-    public function user()
+    public function author()
     {
     	return $this->belongsTo(User::class);
     }
 
-    public function getImagePathAttribute()
+    public function getImageUrlAttribute($value)
     {
-        if ($this->image !== NULL)
-        {
-            return url('/f-n/images/blogs/' . $this->image);
-        } else {
-            return url('/f-n/images/blogs/noimages.jpg');
-        }
+		$imageUrl = "";
+
+		if ( ! is_null($this->image) ) {
+			$imagePath = public_path() . "/f-n/images/blogs/" . $this->image;
+			if ( file_exists($imagePath)) $imageUrl = asset('f-n/images/blogs/'. $this->image);
+		}	
+
+		return $imageUrl;
+
     }
 
-    public function getImageTumbAttribute()
-    {
-        if ($this->image !== NULL)
-        {
-            return url('/f-n/images/blogs/tumb_' . $this->image);
-        } else {
-            return url('/f-n/images/blogs/noimages.jpg');
-        }
+    public function getImageThumbAttribute()
+	{
+		$imageUrl = "";
+
+		if ( ! is_null($this->image) ) {
+			$imagePath = public_path() . "/f-n/images/blogs/thumb_" . $this->image;
+			if ( file_exists($imagePath)) $imageUrl = asset('f-n/images/blogs/thumb_'. $this->image);
+		}	
+
+		return $imageUrl;
     }
 
     public function setTitleAttribute($value)

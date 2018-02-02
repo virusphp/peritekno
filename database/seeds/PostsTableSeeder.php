@@ -26,7 +26,7 @@ class PostsTableSeeder extends Seeder
               'title'        => $faker->sentence(rand(8, 12)),
               'body'         => $faker->paragraphs(rand(10, 15), true),
               'slug'         => $faker->slug(),
-              'image'        => rand(0, 1) == 1 ? $image : NULL,
+              'image'        => $image,
             ];
       }
 

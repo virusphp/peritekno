@@ -21,6 +21,6 @@ Route::get('blog/detailpost/{slug}', [
 ]);
 
 Route::resource('categories', 'CategoryController');
-Route::resource('posts', 'PostController');
+Route::resource('posts', 'Backend\BlogController');
 
 Route::get('/home', 'HomeController@index')->name('home');

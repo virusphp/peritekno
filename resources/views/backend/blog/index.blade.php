@@ -35,7 +35,7 @@
                   </div>
                   <div class="x_content">
 
-                  @include('backend.posts.table')
+                  @include('backend.blog.table')
 
                   </div>
                 </div>

@@ -26,13 +26,13 @@
 
         <div class="wrap-blog-fullwidth">
             <div class="flat-grid margin20px clearfix">
-				@foreach($blogs as $blog)
+				@foreach($posts as $post)
                 <div class="flat-one-four">
                     <article class="entry">
                         <div class="feature-post">
-                            <a href="{{ route('detailpost', $blog->slug) }}"><img src="{{ $blog->ImagePath }}" alt="image"></a>
+                            <a href="{{ route('detailpost', $post->slug) }}"><img src="{{ $post->image_thumb }}" alt="image"></a>
                         </div><!-- /.feature-post -->
-                        <p class="entry-title"><a href="{{ route('detailpost', $blog->slug) }}">{{ $blog->title }}</a></p>
+                        <p class="entry-title"><a href="{{ route('detailpost', $post->slug) }}">{{ $post->title }}</a></p>
                     </article><!-- /.entry -->
                 </div><!-- /.flat-one-four -->
         @endforeach
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="blog-pagination">
-                        {{ $blogs->links() }}
+                        {{ $posts->links() }}
                     </div><!-- /.blog-pagination -->
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->

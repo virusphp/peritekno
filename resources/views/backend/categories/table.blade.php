@@ -18,7 +18,7 @@
 		  <td>{{ $category->slug }}</td>
 		  <td>
 			{!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'DELETE']) !!}
-			<a href="{{ route ('categories.edit',$category->id) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+			<a href="{{ route ('categories.edit',$category->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit </a>
 			<button type="submit"  class="btn btn-danger btn-xs" onclick="return confirm('Apakah kamu yakin ingin Menghapus data ini')" ><i class="fa fa-trash-o"></i> Hapus </a>
 			</button>
 			{!! Form::close() !!}

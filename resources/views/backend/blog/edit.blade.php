@@ -16,7 +16,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-					<h3><i class="fa fa-list"></i> Tambah Post</h3>
+					<h3><i class="fa fa-list"></i> Edit Post</h3>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li> </ul>
@@ -25,7 +25,7 @@
                   <div class="x_content">
                     <br />
 
-{!! Form::open(['route'=>'posts.store', 'files' => true, 'class'=> 'form-horizontal form-label-left']) !!}
+  {!! Form::model($posts, ['route' => ['posts.update', $posts->id], 'files' => true, 'method' => 'put', 'class' => 'form-horizontal']) !!}
 	<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 		{!! Form::label('title','Title',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
 		<div class="col-md-6 col-sm-6 col-xs-12">
@@ -45,7 +45,7 @@
 					<div class="col-md-6">
 						<br><br>
 						<div class="thumbnail">
-						<img src="{{ url($posts->ImagePath) }}" class="img-rounded">
+						<img src="{{ url($posts->ImageUrl) }}" class="img-rounded">
 					</div>
 					</div>
 				</div>
