@@ -29,7 +29,7 @@ class BlogController extends BackendController
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(10);
         return view('backend.blog.index', compact('posts'));
     }
 
@@ -60,45 +60,6 @@ class BlogController extends BackendController
 		]);
 
     	return redirect(route('blog.index'));
-    }
-
-    public function handleRequest($request)
-    {
-      	$data = $request->all();
-		
-		if ($request->hasFile('image')) {
-
-			$width  = config('cms.image.thumbnail.width');
-			$height = config('cms.image.thumbnail.height');
-			$image = $request->file('image');
-			$extension = $image->guessClientExtension();
-			$fileName = str_random(40) . '.' . $extension;
-			$destination = $this->uploadPath; 
-			
-			$successUpload = Image::make($image->getRealPath())
-				->resize(1920, 920)->save($destination . "/" . $fileName);
-
-			if ($successUpload)
-			{
-				$thumbnail = "thumb_". $fileName;
-				Image::make($image->getRealPath())
-					->resize($width,$height)
-					->save($destination . "/" . $thumbnail);
-			}
-
-			$data['image'] = $fileName;
-		}
-
-		return $data;
-    }
-
-    public function deleteImage($filename)
-    {
-        $path = public_path() . DIRECTORY_SEPARATOR . 'f-n/images/blogs'
-            . DIRECTORY_SEPARATOR . $filename;
-        $thumbnail = base_path() . '/public/f-n/images/blogs/tumb_'.$filename;
-
-        return File::delete($path, $thumbnail);
     }
 
     /**
@@ -168,5 +129,44 @@ class BlogController extends BackendController
             'message'=>'<h4><i class="icon fa fa-trash-o"></i>  !</h4> Post '.$post->title.' telah di hapus.'
         ]);
         return redirect('route'('blog.index'));
+    }
+
+    public function handleRequest($request)
+    {
+      	$data = $request->all();
+
+		if ($request->hasFile('image')) {
+
+			$width     = config('cms.image.thumbnail.width');
+			$height    = config('cms.image.thumbnail.height');
+			$image     = $request->file('image');
+			$extension = $image->guessClientExtension();
+			$fileName  = str_random(40) . '.' . $extension;
+			$destination = $this->uploadPath;
+
+			$successUpload = Image::make($image->getRealPath())
+				->resize(1920, 920)->save($destination . "/" . $fileName);
+
+			if ($successUpload)
+			{
+				$thumbnail = "thumb_". $fileName;
+				Image::make($image->getRealPath())
+					->resize($width,$height)
+					->save($destination . "/" . $thumbnail);
+			}
+
+			$data['image'] = $fileName;
+		}
+
+		return $data;
+    }
+
+    public function deleteImage($filename)
+    {
+        $path = public_path() . DIRECTORY_SEPARATOR . 'f-n/images/blogs'
+            . DIRECTORY_SEPARATOR . $filename;
+        $thumbnail = base_path() . '/public/f-n/images/blogs/tumb_'.$filename;
+
+        return File::delete($path, $thumbnail);
     }
 }

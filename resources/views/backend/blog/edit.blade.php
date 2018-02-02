@@ -25,7 +25,7 @@
                   <div class="x_content">
                     <br />
 
-  {!! Form::model($post, ['route' => ['posts.update', $post->id], 'files' => true, 'method' => 'put', 'class' => 'form-horizontal']) !!}
+  {!! Form::model($post, ['route' => ['blog.update', $post->id], 'files' => true, 'method' => 'put', 'class' => 'form-horizontal']) !!}
 	<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 		{!! Form::label('title','Title',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
 		<div class="col-md-6 col-sm-6 col-xs-12">

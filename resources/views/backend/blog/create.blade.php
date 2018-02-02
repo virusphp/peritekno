@@ -25,7 +25,7 @@
                   <div class="x_content">
                   <br />
 
-				{!! Form::open(['route'=>'posts.store', 'method' => 'POST', 'class'=> 'form-horizontal form-label-left', 'files' => true]) !!}
+				{!! Form::open(['route'=>'blog.store', 'method' => 'POST', 'class'=> 'form-horizontal form-label-left', 'files' => true]) !!}
 					<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 						{!! Form::label('title','Title',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
 						<div class="col-md-6 col-sm-6 col-xs-12">

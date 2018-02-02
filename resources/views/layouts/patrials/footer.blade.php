@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="widget widget-text">
-                        <img src="f-n/images/logo1.png" width="100px" height="100px" alt="logo-footer">
+                        <img src="{{ asset('f-n/images/logo1.png') }}" width="100px" height="100px" alt="logo-footer">
                     </div>
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->

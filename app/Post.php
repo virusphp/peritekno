@@ -21,20 +21,20 @@ class Post extends Model
 		if ( ! is_null($this->image) ) {
 			$imagePath = public_path() . "/f-n/images/blogs/" . $this->image;
 			if ( file_exists($imagePath)) $imageUrl = asset('f-n/images/blogs/'. $this->image);
-		}	
+		}
 
 		return $imageUrl;
 
     }
 
     public function getImageThumbAttribute()
-	{
+	  {
 		$imageUrl = "";
 
 		if ( ! is_null($this->image) ) {
-			$imagePath = public_path() . "/f-n/images/blogs/thumb_" . $this->image;
-			if ( file_exists($imagePath)) $imageUrl = asset('f-n/images/blogs/thumb_'. $this->image);
-		}	
+			$imagePath = public_path() . "/f-n/images/blogs/tumb_" . $this->image;
+			if ( file_exists($imagePath)) $imageUrl = asset('f-n/images/blogs/tumb_'. $this->image);
+		}
 
 		return $imageUrl;
     }
