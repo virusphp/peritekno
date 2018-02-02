@@ -29,7 +29,7 @@
                   <div class="x_title">
                     <h2>Post</h2>
                     <ul class="nav navbar-right panel_toolbox">
-                       <a href="{{ route('posts.create') }}"><button class="btn btn-primary btn-sm">Tambah</button></a>
+                       <a href="{{ route('blog.create') }}"><button class="btn btn-primary btn-sm">Tambah</button></a>
                     </ul>
                     <div class="clearfix"></div>
                   </div>

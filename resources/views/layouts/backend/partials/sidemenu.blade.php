@@ -22,9 +22,9 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="{{ url('/home') }}"><i class="fa fa-home"></i> Home </a></li>
+                  <li><a href="{{ route('home') }}"><i class="fa fa-home"></i> Home </a></li>
                   <li><a href="{{ route('categories.index') }}"><i class="fa fa-list"></i> Category </a></li>
-                  <li><a href="{{ route('posts.index') }}"><i class="fa fa-sticky-note"></i> Post </a></li>
+                  <li><a href="{{ route('blog.index') }}"><i class="fa fa-sticky-note"></i> Post </a></li>
               </div>
             </div>
             <!-- /sidebar menu -->

@@ -25,7 +25,7 @@
                   <div class="x_content">
                     <br />
 
-  {!! Form::model($posts, ['route' => ['posts.update', $posts->id], 'files' => true, 'method' => 'put', 'class' => 'form-horizontal']) !!}
+  {!! Form::model($post, ['route' => ['posts.update', $post->id], 'files' => true, 'method' => 'put', 'class' => 'form-horizontal']) !!}
 	<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 		{!! Form::label('title','Title',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
 		<div class="col-md-6 col-sm-6 col-xs-12">
@@ -40,12 +40,12 @@
 	{!! Form::file('image', ['class' => 'btn btn-default col-md-6 col-xs-12']) !!}
 	{!! $errors->first('image', '<p class="help-block">:message</p>') !!}
 
-	@if (isset($posts) && $posts->image !== '')
+	@if (isset($post) && $post->image !== '')
 			<div class="row">
 					<div class="col-md-6">
 						<br><br>
 						<div class="thumbnail">
-						<img src="{{ url($posts->ImageUrl) }}" class="img-rounded">
+						<img src="{{ url($post->ImageUrl) }}" class="img-rounded">
 					</div>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 <div class="form-group">
 <div class="col-md-2 col-sm-2 col-xs-12 col-md-offset-3">
 	{!! Form::reset('Reset', ['class' => 'btn btn-warning']) !!}
-	{!! Form::submit(isset($data) ? 'Simpan' : 'Simpan', ['class' => 'btn btn-primary']) !!}
+	{!! Form::submit(isset($post) ? 'Simpan' : 'Simpan', ['class' => 'btn btn-primary']) !!}
 </div>
 </div>
 {!! Form::close() !!}

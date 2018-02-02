@@ -30,7 +30,7 @@
                     <div class="col-md-9">
                         <article class="entry">
                             <div class="feature-post">
-                                <img src="{{ $detailpost->ImagePath }}" alt="image">
+                                <img src="{{ $detailpost->image_url }}" alt="image">
                             </div><!-- /.feature-post -->
                             <div class="main-post">
                                 <h2 class="title-post"><a href="#">{{ $detailpost->title }}</a></h2>

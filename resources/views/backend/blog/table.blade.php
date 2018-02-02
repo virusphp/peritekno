@@ -19,8 +19,8 @@
 			<td>Category</td>
 			<td>{{ $post->created_at }}</td>
 			<td>
-				{!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) !!}
-				<a href="{{ route ('posts.edit',$post->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+				{!! Form::open(['route' => ['blog.destroy', $post->id], 'method' => 'DELETE']) !!}
+				<a href="{{ route ('blog.edit',$post->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit </a>
 				<button type="submit"  class="btn btn-danger btn-xs" onclick="return confirm('Apakah kamu yakin ingin Menghapus data ini')" ><i class="fa fa-trash-o"></i> Hapus </a>
 				</button>
 				{!! Form::close() !!}

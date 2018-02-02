@@ -52,14 +52,14 @@ class BlogController extends BackendController
     public function store(PostRequest $request)
     {
 		$data = $this->handleRequest($request);
-		$newPost = $request->user()->blog()->create($data);
+		$newPost = $request->user()->posts()->create($data);
 
 		Session::flash('flash_notification', [
 			'level'   => 'success',
 			'message' => '<h4><i class="icon fa fa-check"></i> Berhasil !</h4> Post '.$newPost->title.' telah di Tambah.'
 		]);
 
-    	return redirect(route ('blog.index'));
+    	return redirect(route('blog.index'));
     }
 
     public function handleRequest($request)
@@ -121,6 +121,7 @@ class BlogController extends BackendController
     public function edit($id)
     {
       $post= Post::find($id);
+
       return view('backend.blog.edit', compact('post'));
     }
 
