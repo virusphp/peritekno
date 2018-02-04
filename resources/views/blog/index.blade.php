@@ -47,22 +47,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="blog-pagination">
-                      <ul class="flat-pagination clearfix">
-                          <li class="prev">
-                              <a href="#"><i class="fa fa-angle-left"></i></a>
-                          </li>
-                          <!-- {{ $posts->links() }} -->
-                          <li class="active">1</li>
-                          <li><a href="#">2</a></li>
-                          <li><a href="#">3</a></li>
-                          <li><a href="#">4</a></li>
-                          <li class="next">
-                              <a href="#"><i class="fa fa-angle-right"></i></a>
-                          </li>
-                      </ul>
+						{!! $posts->links() !!}
                     </div><!-- /.blog-pagination -->
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section>
 @endsection
+@push('scripts')
+<script>
+$(document).ready(function() {
+	$(".pagination").addClass("flat-pagination");
+	$(".flat-pagination").removeClass("pagination");
+})
+</script>
+@endpush

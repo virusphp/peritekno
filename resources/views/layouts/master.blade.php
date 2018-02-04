@@ -83,5 +83,6 @@
     <script type="text/javascript" src="{{ asset('f-n/javascript/jquery.themepunch.revolution.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('f-n/javascript/slider.js') }}"></script>
     @yield('scripts')
+	@stack('scripts')
 </body>
 </html>

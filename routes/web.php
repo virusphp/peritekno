@@ -15,6 +15,10 @@ Auth::routes();
 
 Route::get('/', 'BlogController@blog')->name('blog');
 
+Route::get('/coba', function() {
+	return view('blog.coba');
+});
+
 Route::get('blog/detailpost/{slug}', [
 	'uses' => 'BlogController@detailpost',
 	'as'   => 'detailpost'
