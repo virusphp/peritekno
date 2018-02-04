@@ -29,4 +29,3 @@
 	  </tbody>
 	  @endforeach
 	</table>
-{{ $posts->links() }}

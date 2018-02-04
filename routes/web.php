@@ -24,10 +24,10 @@ Route::get('blog/detailpost/{slug}', [
 	'as'   => 'detailpost'
 ]);
 
-Route::resource('categories', 'CategoryController');
 
 Route::group(['prefix' => 'backend'], function() {
 
 	Route::get('home', 'Backend\HomeController@index')->name('home');
 	Route::resource('blog', 'Backend\BlogController');
+	Route::resource('categories', 'Backend\CategoryController');
 });

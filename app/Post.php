@@ -32,8 +32,8 @@ class Post extends Model
 		$imageUrl = "";
 
 		if ( ! is_null($this->image) ) {
-			$imagePath = public_path() . "/f-n/images/blogs/tumb_" . $this->image;
-			if ( file_exists($imagePath)) $imageUrl = asset('f-n/images/blogs/tumb_'. $this->image);
+			$imagePath = public_path() . "/f-n/images/blogs/thumb_" . $this->image;
+			if ( file_exists($imagePath)) $imageUrl = asset('f-n/images/blogs/thumb_'. $this->image);
 		}
 
 		return $imageUrl;

@@ -29,7 +29,7 @@ class BlogController extends BackendController
      */
     public function index()
     {
-        $posts = Post::paginate(10);
+        $posts = Post::latest()->paginate($this->limit);
         return view('backend.blog.index', compact('posts'));
     }
 

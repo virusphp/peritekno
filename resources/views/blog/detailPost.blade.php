@@ -37,7 +37,7 @@
                                 <div class="meta-post clearfix">
                                     <ul>
                                         <li class="post-author">
-                                            <span><a href="#">By Charlie Walter</a></span>
+                                            <span><a href="#">{{ $detailpost->author->name }}</a></span>
                                         </li>
                                         <li class="post-date">November 18th, 2015</li>
                                         <li class="post-categories">

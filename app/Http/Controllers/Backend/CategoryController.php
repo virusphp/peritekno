@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Category;
 use App\Http\Requests\CategoryRequest;
+use App\Category;
 use Session;
 
-class CategoryController extends Controller
+class CategoryController extends BackendController
 {
     /**
      * Display a listing of the resource.

@@ -30,11 +30,11 @@
                 <div class="flat-one-four">
                     <article class="entry">
                         <div class="feature-post">
-                          @if($post->image_thumb == "")
-                            <a href="#"></a>
-                          @else
-                          <a href="{{ route('detailpost', $post->slug) }}"><img src="{{ $post->image_thumb }}" alt="image"></a>
-                          @endif
+							@if($post->image_thumb == "")
+								<a href="#"></a>
+							@else
+								<a href="{{ route('detailpost', $post->slug) }}"><img src="{{ $post->image_thumb }}" alt="image"></a>
+							@endif
                         </div><!-- /.feature-post -->
                         <p class="entry-title"><a href="{{ route('detailpost', $post->slug) }}">{{ $post->title }}</a></p>
                     </article><!-- /.entry -->
@@ -57,7 +57,7 @@
 @push('scripts')
 <script>
 $(document).ready(function() {
-	$(".pagination").addClass("flat-pagination");
+	$(".pagination").addClass("flat-pagination clearfix");
 	$(".flat-pagination").removeClass("pagination");
 })
 </script>
