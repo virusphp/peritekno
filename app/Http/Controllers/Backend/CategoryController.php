@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use App\Category;
 use Session;
+use DB;
 
 class CategoryController extends BackendController
 {
@@ -16,7 +17,7 @@ class CategoryController extends BackendController
      */
     public function index()
     {
-      $categories = Category::all();
+      $categories = DB::table('categories')->paginate($this->limit);
       return view('backend.categories.index', compact('categories'));
     }
 
@@ -38,15 +39,9 @@ class CategoryController extends BackendController
      */
     public function store(CategoryRequest $request)
     {
-      $data       = $request->only(['name', 'parent_id', 'slug']);
-      $categories = Post::create($data);
-
-     Session::flash('flash_notification', [
-                    'level'=>'success',
-                    'message'=>'<h4><i class="icon fa fa-check"></i> Berhasil !</h4>Category '.$category->title.' telah di Tambah.'
-                               ]);
-
-    return redirect(route ('categories.index'));
+		Category::create($request->all());
+		
+		return redirect()->route('categories.index')->with('message', 'Kategori berhasil di buat!.');		
     }
 
     /**
@@ -68,7 +63,7 @@ class CategoryController extends BackendController
      */
     public function edit($id)
     {
-      $categories = Category::find($id);
+      $category = Category::find($id);
       return view('backend.categories.edit', compact('category'));
     }
 

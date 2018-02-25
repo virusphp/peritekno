@@ -23,31 +23,12 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <br />
+                  <br />
 					{!! Form::open(['route'=>'categories.store', 'class'=> 'form-horizontal form-label-left']) !!}
-						<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-								{!! Form::label('title','Name',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
-									<div class="col-md-6 col-sm-6 col-xs-12">
-										{!! Form::text('name', null, ['class' => 'form-control col-md-7 col-xs-12']) !!}
-										{!! $errors->first('name', '<p class="help-block">:message</p>') !!}
-									</div>
-							</div>
-							<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-								{!! Form::label('title','Parent id',['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) !!}
-									<div class="col-md-6 col-sm-6 col-xs-12">
-										{!! Form::text('parent_id', null, ['class' => 'form-control col-md-7 col-xs-12']) !!}
-										{!! $errors->first('parent_id', '<p class="help-block">:message</p>') !!}
-									</div>
-							</div>
 
-							<div class="ln_solid"></div>
-								<div class="form-group">
-									<div class="col-md-2 col-sm-2 col-xs-12 col-md-offset-3">
-									{!! Form::reset('Reset', ['class' => 'btn btn-warning']) !!}
-									{!! Form::submit(isset($data) ? 'Update' : 'Simpan', ['class' => 'btn btn-primary']) !!}
-							</div>
-						</div>
-				   {!! Form::close() !!}
+						@include('backend.categories._form')
+
+				   	{!! Form::close() !!}
                   </div>
                 </div>
               </div>
@@ -56,3 +37,4 @@
           </div>
         </div>
 @endsection
+@include('backend.categories.script')

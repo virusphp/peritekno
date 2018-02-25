@@ -24,16 +24,15 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required',
-            'parent_id' => 'required'
+            'name' => 'required|unique:categories|max:255',
+            'slug' => 'required|unique:categories|max:255'
         ];
     }
 
     public function messages()
     {
       return[
-            'name.required'      => 'Nama Category Dilarang Kosong',
-            'parent_id.required' => 'Parent Id Dilarang Kosong',
+            'name.required'      => 'Nama Category Dilarang Kosong'
             ];
     }
 }

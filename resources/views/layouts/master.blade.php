@@ -7,24 +7,17 @@
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>PERITECHNO</title>
-
     <meta name="author" content="themesflat.com">
-
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
     <!-- Bootstrap  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/bootstrap.css') }}" >
-
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/style.css') }}">
-
     <!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/responsive.css') }}">
-
     <!-- Colors -->
     <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/colors/color3.css') }}" id="colors">
-
 	<!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/animate.css') }}">
 

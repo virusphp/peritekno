@@ -8,19 +8,19 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ asset('images/img.jpg') }}" alt=""> NAMA ADMIN
+                    <img src="{{ asset('images/img.jpg') }}" alt="">{{ Auth::user()->name }}
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="{{ url('/admin/edit-profile') }}"> Profile</a></li>
+                    <li><a href="#"> Profile</a></li>
 					<li>
 						<a href="{{ url('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-							<i class="fa fa-sign-out pull-right"></i>
+							<i class="fa fa-sign-out pull-right"></i> 
 							Log Out
 						</a>
 						<form id="logout-form" action="{{ url('logout') }}" method="POST" style="display:none;">
 							{{ csrf_field() }}
-						</form>
+						</form>	
 					</li>
                   </ul>
                 </li>
@@ -28,3 +28,4 @@
             </nav>
           </div>
         </div>
+

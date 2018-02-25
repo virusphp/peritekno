@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable = ['name', 'parent_id', 'slug'];
+    protected $fillable = ['name', 'slug'];
 
     public function setTitleAttribute($value)
     {
-      $this->attributes['title'] = $value;
       $this->attributes['slug']  = str_slug($value);
     }
 }
