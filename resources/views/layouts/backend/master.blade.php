@@ -46,7 +46,9 @@
 	<script src="{{ asset('b-n/js/bootstrap.min.js') }}"></script>
 	<!-- Custom Theme Scripts -->
 	<script src="{{ asset('b-n/js/custom.min.js') }}"></script>
-
+	<!-- TinyMCE -->
+    <script src="{{ asset('b-n/js/tinymce/jquery.tinymce.min.js') }}"></script>
+    <script src="{{ asset('b-n/js/tinymce/tinymce.min.js') }}"></script>
 	@stack('scripts')
 </body>
 </html>

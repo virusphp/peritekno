@@ -27,34 +27,14 @@
         <ul class="nav side-menu">
           <li><a href="{{ route('home') }}"><i class="fa fa-home"></i> Home </a></li>
           <li><a href="{{ route('categories.index') }}"><i class="fa fa-list"></i> Category </a></li>
+		 <!-- Blogs Menu -->
           <li><a><i class="fa fa-building"></i> Blogs<span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="#"><i class="fa fa-file-word-o"></i> Word</a></li>
-              <li><a href="#"><i class="fa fa-file-excel-o"></i> Excel</a></li>
+              <li><a href="{{ route('blog.index') }}"><i class="fa fa-file-word-o"></i> Post All</a></li>
+              <li><a href="{{ route('blog.create') }}"><i class="fa fa-file-excel-o"></i> Blog posts</a></li>
             </ul>
           </li>
 
-          <li><a><i class="fa fa-credit-card-alt"></i> Finance <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu">
-              <li><a href="#"><i class="fa fa-file-word-o"></i> Word</a></li>
-              <li><a href="#"><i class="fa fa-file-excel-o"></i> Excel</a></li>
-            </ul>
-          </li>
-
-          <li><a><i class="fa fa-barcode"></i> Production <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu">
-              <li><a href="#"><i class="fa fa-file-word-o"></i> Word</a></li>
-              <li><a href="#"><i class="fa fa-file-excel-o"></i> Excel</a></li>
-            </ul>
-          </li>
-
-          <!-- Maintenance -->
-          <li><a><i class="fa fa-cogs"></i> Maintenance <span class="fa fa-chevron-down"></span></a>
-            <ul class="nav child_menu">
-              <li><a href="#"><i class="fa fa-file-word-o"></i> Data Word</a></li>
-              <li><a href="#"><i class="fa fa-file-excel-o"></i> Data Excel</a></li>
-            </ul>
-          </li>
           <!-- End Maintenance -->
           <li><a><i class="fa fa-group"></i> Management User <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
