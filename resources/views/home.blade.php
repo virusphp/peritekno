@@ -1,5 +1,6 @@
 @extends('layouts.backend.master')
 @section('content')
+<!-- //ngetes -->
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
