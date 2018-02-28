@@ -19,6 +19,10 @@ Route::get('/coba', function() {
 	return view('blog.coba');
 });
 
+Route::get('/form', function() {
+	return view('backend.blog._form');
+});
+
 Route::get('blog/detailpost/{slug}', [
 	'uses' => 'BlogController@detailpost',
 	'as'   => 'detailpost'

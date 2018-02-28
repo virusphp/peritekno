@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('b-n/css/dataTables.bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('b-n/css/custom.min.css') }}">
     <link rel="stylesheet" href="{{ asset('b-n/css/daiwabo.css') }}">
+    <link rel="stylesheet" href="{{ asset('b-n/js/jquery.tagsinput/dist/jquery.tagsinput.min.css') }}">
   </head>
 
   <body class="nav-md">
@@ -51,6 +52,9 @@
     {{-- tinymce --}}
     <script src="{{ asset('b-n/js/tinymce/jquery.tinymce.min.js') }}"></script>
     <script src="{{ asset('b-n/js/tinymce/tinymce.min.js') }}"></script>
+    {{--  tags  --}}
+    <script src="{{ asset('b-n/js/jquery.tagsinput/src/jquery.tagsinput.js') }}"></script>
+
 
 <!-- Konfigurasi Standar -->
     <script type="text/javascript">
@@ -58,6 +62,6 @@
         selector: "textarea#body"
     });
   </script>
-	@yield('scripts')
+ 
   </body>
 </html>
