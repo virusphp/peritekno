@@ -42,8 +42,10 @@
 				<div class="col-sm-5 pull-left">
 					{{ $categories->links() }}
 				</div>
-					<div class="clearfix"></div>
+				<div class="clearfix"></div>
+
 				<div class="col-sm-7 pull-right">
+
 				</div>
 			</div>
 		  </div>
