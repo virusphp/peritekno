@@ -132,8 +132,9 @@ class BlogController extends BackendController
         return redirect('route'('blog.index'));
     }
 
-    public function handleRequest($request)
+    protected function handleRequest($request)
     {
+		// ini bisa di ganti only kalo mas pingin only
       	$data = $request->all();
 
 		if ($request->hasFile('image')) {

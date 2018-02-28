@@ -14,6 +14,6 @@ class CategoryController extends Controller
                     ->posts()
                     ->paginate(8);
         
-        return view('blog.index', compact('category'));
+        return view('category.index', compact('category'));
     }
 }

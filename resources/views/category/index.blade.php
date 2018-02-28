@@ -26,17 +26,17 @@
 
         <div class="wrap-blog-fullwidth">
             <div class="flat-grid margin20px clearfix">
-				@foreach($posts as $post)
+				@foreach($category as $cat)
                 <div class="flat-one-four">
                     <article class="entry">
                         <div class="feature-post">
-							@if($post->image_thumb == "")
+							@if($cat->image_thumb == "")
 								<a href="#"></a>
 							@else
-								<a href="{{ route('detailpost', $post->slug) }}"><img src="{{ $post->image_thumb }}" alt="image"></a>
+								<a href="{{ route('detailpost', $cat->slug) }}"><img src="{{ $cat->image_thumb }}" alt="image"></a>
 							@endif
                         </div><!-- /.feature-post -->
-                        <p class="entry-title"><a href="{{ route('detailpost', $post->slug) }}">{{ $post->title }}</a></p>
+                        <p class="entry-title"><a href="{{ route('detailpost', $cat->slug) }}">{{ $cat->title }}</a></p>
                     </article><!-- /.entry -->
                 </div><!-- /.flat-one-four -->
         @endforeach
@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="blog-pagination">
-						{!! $posts->links() !!}
+						{!! $category->links() !!}
                     </div><!-- /.blog-pagination -->
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->

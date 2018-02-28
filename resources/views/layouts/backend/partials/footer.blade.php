@@ -1,7 +1,7 @@
 <!-- footer content -->
 	<footer>
 	  <div class="pull-right">
-		by <a href="#">peritechno</a>
+		by <a href="#">Peritechno</a>
 	  </div>
 	  <div class="clearfix"></div>
 	</footer>

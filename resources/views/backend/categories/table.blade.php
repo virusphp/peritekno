@@ -1,29 +1,32 @@
-	<table class="table table-responsive">
-	  <thead>
+<div class="table-responsive">
+	<table class="table table-bordered table-striped jambo_table bulk_action">
+	<thead>
 		<tr>
-		  <th>#</th>
-		  <th>name</th>
-		  <th>parent_id</th>
-		  <th>slug</th>
-		  <th>Action</th>
+			<th># No </th>
+			<th>Nama</th>
+			<th>Created at</th>
+			<th>Action</th>
 		</tr>
-	  </thead>
-		<?php $no=1; ?>
+	</thead>
+	<tbody>
 		@foreach($categories as $category)
-	  <tbody>
 		<tr>
-		  <th scope="row">{{ $no++ }}</th>
-		  <td>{{ $category->name }}</td>
-		  <td>{{ $category->parent_id }}</td>
-		  <td>{{ $category->slug }}</td>
-		  <td>
-			{!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'DELETE']) !!}
-			<a href="{{ route ('categories.edit',$category->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-			<button type="submit"  class="btn btn-danger btn-xs" onclick="return confirm('Apakah kamu yakin ingin Menghapus data ini')" ><i class="fa fa-trash-o"></i> Hapus </a>
-			</button>
-			{!! Form::close() !!}
-		  </td>
+			<td>{{ $loop->iteration }}
+			<td>{{ $category->name }}</td>
+			<td>{{ $category->created_at }}</td>
+			<td>
+				{!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'DELETE']) !!}
+					<a href="{{ route ('categories.edit',$category->id) }}" class="btn btn-xs btn-warning">
+						<i class="fa fa-pencil"></i> 
+					</a>
+					<button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Apakah kamu yakin ingin Menghapus data ini')" >
+						<i class="fa fa-trash-o"></i> 
+					</button>
+				{!! Form::close() !!}
+			</td>
+
 		</tr>
-	  </tbody>
-	  @endforeach
+		@endforeach
+	</tbody>
 	</table>
+</div>

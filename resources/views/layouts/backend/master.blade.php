@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
   <head>
@@ -28,7 +29,7 @@
 	  @include('layouts.backend.partials._flash')
 
 	  {{-- menu --}}
-	  @include('layouts.backend.partials.sidemenu')
+	  @include('layouts.backend.partials.sidebar')
 
 	  {{-- header --}}
 	  @include('layouts.backend.partials.header')
@@ -56,12 +57,14 @@
     <script src="{{ asset('b-n/js/jquery.tagsinput/src/jquery.tagsinput.js') }}"></script>
 
 
+
 <!-- Konfigurasi Standar -->
     <script type="text/javascript">
     tinymce.init({
         selector: "textarea#body"
     });
   </script>
- 
+ @stack('scripts')
   </body>
 </html>
+
