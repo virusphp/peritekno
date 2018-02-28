@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['author_id', 'title', 'slug', 'body', 'image'];
+    protected $fillable = ['author_id', 'title', 'slug', 'body', 'image', 'category_id'];
 
     public function author()
     {
     	return $this->belongsTo(User::class);
+    }
+
+    public function category()
+    {
+    	return $this->belongsTo(category::class);
     }
 
     public function getImageUrlAttribute($value)

@@ -26,7 +26,7 @@
 
         <div class="wrap-blog-fullwidth">
             <div class="flat-grid margin20px clearfix">
-				@foreach($posts as $post)
+				@foreach($category as $post)
                 <div class="flat-one-four">
                     <article class="entry">
                         <div class="feature-post">
@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="blog-pagination">
-						{!! $posts->links() !!}
+						{!! $category->links() !!}
                     </div><!-- /.blog-pagination -->
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->

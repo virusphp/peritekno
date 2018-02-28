@@ -24,6 +24,11 @@ Route::get('blog/detailpost/{slug}', [
 	'as'   => 'detailpost'
 ]);
 
+Route::get('category/{slug}', [
+	'uses' => 'CategoryController@category',
+	'as'   => 'category'
+]);
+
 
 Route::group(['prefix' => 'backend'], function() {
 

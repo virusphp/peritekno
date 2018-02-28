@@ -50,11 +50,9 @@
                                 </li>
                                 <li><a href="course.html">Tutorial</a>
                                     <ul class="submenu">
-                                        <li><a href="{{ url('/blog') }}">PHP</a></li>
-                                        <li><a href="{{ url('/blog') }}">Design</a></li>
-                                        <li><a href="{{ url('/blog') }}">Server</a></li>
-                                        <li><a href="{{ url('/blog') }}">Seo</a></li>
-                                        <li><a href="{{ url('/blog') }}">Instalasi</a></li>
+                                        @foreach($categories as $category)
+                                        <li><a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a></li>
+                                        @endforeach
                                     </ul><!-- /.submenu -->
                                 </li>
 

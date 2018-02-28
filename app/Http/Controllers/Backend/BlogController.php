@@ -9,7 +9,7 @@ use App\User;
 
 use Intervention\Image\Facades\Image;
 use File;
-//use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Session;
 
 class BlogController extends BackendController
@@ -120,6 +120,7 @@ class BlogController extends BackendController
      */
     public function destroy($id)
     {
+    //dlete
         $post = Post::find($id);
         $data['image'] = $this->deleteImage($post->image);
         $post->delete();

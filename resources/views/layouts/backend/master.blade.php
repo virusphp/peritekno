@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('b-n/css/jquery.dataTables.css') }}">
     <link rel="stylesheet" href="{{ asset('b-n/css/dataTables.bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('b-n/css/custom.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('b-n/css/daiwabo.css') }}">
+    <link rel="stylesheet" href="{{ asset('b-n/css/daiwabo.css') }}">
   </head>
 
   <body class="nav-md">
@@ -47,7 +47,7 @@
     <script src="{{ asset('b-n/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('b-n/js/dataTables.bootstrap.min.js') }}"></script>
     <!-- Custom Theme Scripts -->
-    
+
     {{-- tinymce --}}
     <script src="{{ asset('b-n/js/tinymce/jquery.tinymce.min.js') }}"></script>
     <script src="{{ asset('b-n/js/tinymce/tinymce.min.js') }}"></script>
