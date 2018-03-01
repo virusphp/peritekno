@@ -22,13 +22,39 @@
 	<div class="x_panel">
 
 		<div class="x_title">
+			<h4>Category</h4>
+		</div>
+
+		<div class="x_content">
+
+			<div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+				  {!! Form::select('category_id', App\Category::pluck('name', 'id'), null, ['placeholder' => 'Pilih Category', 'class' => 'form-control col-md-7 col-xs-12']) !!}
+			
+				  @if ($errors->has('category_id'))
+						 <span class="help-block">
+						 {!! $errors->first('category_id', '<p class="help-block">:message</p>') !!}
+						 </span>
+				  @endif
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="col-md-3 col-sm-3 col-xs-12">
+	<div class="x_panel">
+
+		<div class="x_title">
 			<h4>Gambar</h4>
 		</div>
 
 		<div class="x_content">
 
 			<div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
-				{!! Form::label('image', 'Gambar', ['class'=>'control-label col-md-3 col-sm-3 col-xs-12']) !!}
+				{{--  {!! Form::label('image', 'Gambar', ['class'=>'control-label col-md-3 col-sm-3 col-xs-12']) !!}  --}}
 				<div class="col-md-6 col-sm-6 col-xs-12">
 					{!! Form::file('image') !!}
 					{!! $errors->first('image', '<p class="help-block">:message</p>') !!}
