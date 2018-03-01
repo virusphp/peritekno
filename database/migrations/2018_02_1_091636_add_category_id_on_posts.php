@@ -14,7 +14,7 @@ class AddCategoryIdOnPosts extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('category_id')->unisigned()->after('image');
+            $table->integer('category_id')->unsigned()->after('image');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('restrict');
         });
     }
