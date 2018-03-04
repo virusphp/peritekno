@@ -16,12 +16,13 @@
 
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<div class="row x_title">
-					<div class="col-md-12">
-						<h3>Blog Post</h3>
-					</div>
-				</div>
-				{!! Form::open(['route'=>'blog.store', 'method' => 'POST', 'class'=> 'form-horizontal form-label-left', 'files' => true]) !!}
+				{!! Form::model($post, [
+					'route'=>'blog.store',
+					'method' => 'POST', 
+					'class'=> 'form-horizontal form-label-left', 
+					'files' => true,
+					'id' => 'post-form'
+				]) !!}
 					@include('backend.blog._form')
 				{!! Form::close() !!}
             </div>

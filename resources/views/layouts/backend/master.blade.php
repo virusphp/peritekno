@@ -15,6 +15,8 @@
     <link href="{{ asset('b-n/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="{{ asset('b-n/css/custom.min.css') }}">
     <link rel="stylesheet" href="{{ asset('b-n/css/daiwabo.css') }}">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+
   </head>
 
   <body class="nav-md">
@@ -44,6 +46,7 @@
     {{-- tinymce --}}
     <script src="{{ asset('b-n/js/tinymce/jquery.tinymce.min.js') }}"></script>
     <script src="{{ asset('b-n/js/tinymce/tinymce.min.js') }}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
  	@stack('scripts')
 
   </body>

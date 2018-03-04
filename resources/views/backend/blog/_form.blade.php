@@ -44,41 +44,35 @@
 </div>
 
 
-<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
 	<div class="x_panel">
-
-		<div class="x_title">
-			<h4>Gambar</h4>
-		</div>
-
-		<div class="x_content">
+		<div class="x_content text-center">
 
 			<div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
-				{{--  {!! Form::label('image', 'Gambar', ['class'=>'control-label col-md-3 col-sm-3 col-xs-12']) !!}  --}}
-				<div class="col-md-6 col-sm-6 col-xs-12">
-					{!! Form::file('image') !!}
-					{!! $errors->first('image', '<p class="help-block">:message</p>') !!}
+				<div class="fileinput fileinput-new" data-provides="fileinput">
+					<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+						<img src="{{ ($post->image_thumb) ? $post->image_thumb : 'http://placehold.it/200x150&text=No+Image' }}" alt="...">
+					</div>
+					<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+					<div>
+						<span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span>{!! Form::file('image') !!}</span>
+						<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+					</div>
 				</div>
 			</div>
-
+			{!! $errors->first('image', '<p class="help-block">:message</p>') !!}
 		</div>
 	</div>
 </div>
 
-<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
 	<div class="x_panel">
 
-		<div class="x_title">
-			<h4>Lari up</h4>
-		</div>
-
-		<div class="x_content">
+		<div class="x_content text-center">
 
 			{!! Form::hidden('author_id', 1) !!}
 			<div class="form-group">
-				<div class="col-md-2 col-sm-2 col-xs-12 col-md-offset-3">
-					{!! Form::submit(isset($data) ? 'Simpan' : 'Simpan', ['class' => 'btn btn-primary']) !!}
-				</div>
+				<button type="submit" class="btn btn-primary" id="publish">Publish</button>
 			</div>
 
 		</div>
