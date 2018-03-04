@@ -3,7 +3,7 @@
 		<div class="x_content">
 			<div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					{!! Form::text('title', null, ['class' => 'form-control col-md-7 col-xs-12', 'placeholder' => 'Title . . .']) !!}
+					{!! Form::text('title', null, ['id' => 'title', 'class' => 'form-control col-md-7 col-xs-12', 'placeholder' => 'Title . . .']) !!}
 					{!! $errors->first('title', '<p class="help-block">:message</p>') !!}
 				</div>
 			</div>
@@ -17,6 +17,8 @@
 		</div>
 	</div>
 </div>
+
+{!! Form::hidden('slug', null, ['id' => 'slug','class' => 'form-control col-md-7 col-xs-12']) !!}
 
 <div class="col-md-3 col-sm-3 col-xs-12">
 	<div class="x_panel">
@@ -43,7 +45,6 @@
 	</div>
 </div>
 
-
 <div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
 	<div class="x_panel">
 		<div class="x_content text-center">
@@ -64,25 +65,15 @@
 		</div>
 	</div>
 </div>
-
 <div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
 	<div class="x_panel">
 
 		<div class="x_content text-center">
 
-			{!! Form::hidden('author_id', 1) !!}
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary" id="publish">Publish</button>
+				{!! Form::submit('Publish', ['class' => 'btn btn-primary']) !!}
 			</div>
 
 		</div>
 	</div>
 </div>
-@push('scripts')
-<script>
-// tambahkan code tiny mce di sini
-    tinymce.init({
-        selector: "textarea#editor"
-    });
-</script>
-@endpush

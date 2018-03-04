@@ -25,19 +25,20 @@ class PostRequest extends FormRequest
     {
         return [
             'title'         => 'required',
+            'slug'          => 'required|unique:posts',
             'body'          => 'required',
             'image'         => 'image|mimes:png,jpg,jpeg',
-            'author_id'     => 'required'
+            'category_id'   => 'required'
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'title.required'        => 'Judul Dilarang Kosong',
-            'image.image'           => 'Extensi Gambar Harus png,jpeg,jpg',
-            'body.required'         => 'Body Dilarang Kosong',
-            'author_id.required'    => 'Login dulu',
-        ];
-    }
+//    public function messages()
+//    {
+//        return [
+//            'title.required'        => 'Judul Dilarang Kosong',
+//            'image.image'           => 'Extensi Gambar Harus png,jpeg,jpg',
+//            'body.required'         => 'Body Dilarang Kosong',
+//            'author_id.required'    => 'Login dulu',
+//        ];
+//    }
 }

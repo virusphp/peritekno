@@ -132,7 +132,7 @@ class BlogController extends BackendController
         return redirect('route'('blog.index'));
     }
 
-    protected function handleRequest($request)
+    public function handleRequest($request)
     {
 		// ini bisa di ganti only kalo mas pingin only
       	$data = $request->all();

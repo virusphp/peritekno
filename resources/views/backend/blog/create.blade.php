@@ -19,9 +19,8 @@
 				{!! Form::model($post, [
 					'route'=>'blog.store',
 					'method' => 'POST', 
-					'class'=> 'form-horizontal form-label-left', 
-					'files' => true,
-					'id' => 'post-form'
+					'class'=> 'form-horizontal', 
+					'files' => true
 				]) !!}
 					@include('backend.blog._form')
 				{!! Form::close() !!}
@@ -30,6 +29,6 @@
 
     </div>
 </div>
-
-
 @endsection
+@include('backend.blog.script')
+
