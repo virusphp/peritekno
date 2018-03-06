@@ -14,9 +14,31 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('b-n/plugin/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('b-n/css/daiwabo.css') }}">
-	<link rel="stylesheet" href="{{ asset('b-n/css/custom.min.css') }}">
-  	<link rel="stylesheet" href="{{ asset('b-n/plugin/jasny-bootstrap/css/jasny-bootstrap.min.css') }}">
-
+	  <link rel="stylesheet" href="{{ asset('b-n/css/custom.min.css') }}">
+  	{{--  <link rel="stylesheet" href="{{ asset('b-n/plugin/jasny-bootstrap/css/jasny-bootstrap.min.css') }}">  --}}
+    {{--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.css">  --}}
+    <style>
+    .tombol_upload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    width: 100px;
+    height: 25px;
+    font-style: bold;
+    font-family:sans-serif;
+}
+    .tombol_upload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}    
+    </style>
   </head>
 
   <body class="nav-md">
@@ -44,9 +66,29 @@
 	<!-- Custom Theme Scripts -->
     {{-- tinymce --}}
     <script src="{{ asset('b-n/plugin/tinymce/tinymce.min.js') }}"></script>
-	<script src="{{ asset('b-n/plugin/jasny-bootstrap/js/jasny-bootstrap.min.js') }}"></script>
-
-	<script src="{{ asset('b-n/js/custom.min.js') }}"></script>
+	{{--  <script src="{{ asset('b-n/plugin/jasny-bootstrap/js/jasny-bootstrap.min.js') }}"></script>  --}}
+{{--  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/dropzone.js') }}"></script>  --}}
+  <script src="{{ asset('b-n/js/custom.min.js') }}"></script>
+  <script>
+    function bacaGambar(input) {
+      if (input.files && input.files[0]) {
+         var reader = new FileReader();
+      
+         reader.onload = function (e) {
+           $('#gambar').attr('src', e.target.result);
+         }
+      
+         reader.readAsDataURL(input.files[0]);
+      }
+     }
+     $(".upload").change(function(){
+    bacaGambar(this);
+});
+  </script>
+  
+  <script>
+  $('.upload').after('UploadImage');
+  </script>
  	@stack('scripts')
 
   </body>

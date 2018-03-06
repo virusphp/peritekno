@@ -10,7 +10,8 @@ class Category extends Model
 
     public function setTitleAttribute($value)
     {
-      $this->attributes['slug']  = str_slug($value);
+    	$this->attributes['name'] = $value;
+    	$this->attributes['slug']  = str_slug($value);
     }
 
     public function posts()

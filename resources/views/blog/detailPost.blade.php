@@ -30,7 +30,12 @@
                     <div class="col-md-9">
                         <article class="entry">
                             <div class="feature-post">
-                                <img src="{{ $detailpost->image_url }}" alt="image">
+                                    @if($detailpost->image !== "")
+                                    <div class="courses-thumbnail">
+                                            <img src="{{ $detailpost->image_url }}" alt="image">
+                                    </div>
+                                    @endif
+                               
                             </div><!-- /.feature-post -->
                             <div class="main-post">
                                 <h2 class="title-post"><a href="#">{{ $detailpost->title }}</a></h2>
@@ -39,7 +44,7 @@
                                         <li class="post-author">
                                             <span><a href="#">{{ $detailpost->author->name }}</a></span>
                                         </li>
-                                        <li class="post-date">November 18th, 2015</li>
+                                        <li class="post-date">{{ $detailpost->CreatedAT }}</li>
                                         <li class="post-categories">
                                             <a href="#">Graphic</a>,
                                             <a href="#">Website</a>
@@ -136,7 +141,7 @@
                                         </li>
                                     </ul><!-- /.comment-list -->
                                 </div><!-- /.comment-list-wrap -->
-
+                                
                                 <div id="respond" class="comment-respond">
                                     <h4 class="title comment-title">Add a review</h4>
                                     <form class="flat-contact-form" id="contactform5" method="post" action="./contact/contact-process.php">
@@ -166,22 +171,20 @@
                         <div class="widget widget-categories">
                             <h5 class="widget-title">Categories</h5>
                             <ul>
-                                <li><a href="#">Photoshop<span>(5)</span></a></li>
-                                <li><a href="#">Photography<span>(5)</span></a></li>
-                                <li><a href="#">Design<span>(5)</span></a></li>
-                                <li><a href="#">Development<span>(5)</span></a></li>
-                                <li><a href="#">Illustrator<span>(5)</span></a></li>
+                                    @foreach($categories as $category)
+                                    <li><a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a><span><strong>({{ $category->posts->count() }})</strong></span></li>
+                                    @endforeach
+                                {{--  <li><a href="#">Photoshop<span>(5)</span></a></li>  --}}
                             </ul>
                         </div><!-- /.widget .widget-categories -->
 
                         <div class="widget widget-recent-post">
                             <h5 class="widget-title">Recent Posts</h5>
                             <ul>
-                                <li><a href="#">Smarter Grids With Sass And ...</a></li>
-                                <li><a href="#">Quantity Ordering With CSS</a></li>
-                                <li><a href="#">Gallery Post</a></li>
-                                <li><a href="#">Video Post</a></li>
-                                <li><a href="#">Image Post</a></li>
+                                @foreach ($postTerakhir as $post )
+                                <li><a href="{{ route('detailpost', $post->slug) }}">{{ $post->title }}</a></li>
+                                @endforeach
+                              
                             </ul>
                         </div><!-- /.widget .widget-recent-post -->
 
@@ -197,87 +200,20 @@
                             </div>
                         </div><!-- /.widget .widget-tags -->
 
-                        <div class="widget widget-instagram">
-                            <h5 class="widget-title">Instagram </h5>
-                            <div class="instagram-thumb clearfix">
-                                <div class="thumb">
-                                    <a href="#"><img class="img" src="images/blog/flickr1.png" alt="image"></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img" src="images/blog/flickr2.png" alt="image"></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img" src="images/blog/flickr3.png" alt="image"></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img" src="images/blog/flickr4.png" alt="image"></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img" src="images/blog/flickr5.png" alt="image"></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img" src="images/blog/flickr6.png" alt="image"></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img" src="images/blog/flickr7.png" alt="image"></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img" src="images/blog/flickr8.png" alt="image"></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img" src="images/blog/flickr9.png" alt="image"></a>
-                                </div>
-                            </div><!-- /.instagram-thumb -->
-                        </div><!-- /.widget .widget-instagram -->
-
                         <div class="widget widget-recent-post style1">
                             <h5 class="widget-title">popular posts</h5>
                             <ul class="post-news clearfix">
+                                @foreach ($postTerakhir as $post)                                    
                                 <li>
                                     <div class="thumb">
-                                        <a href="#"><img src="images/blog/thumb1.png" alt="image"></a>
+                                        <a href="#"><img src="{{ $post->ImageThumb }}" alt="image"></a>
                                     </div>
                                     <div class="text">
-                                        <h4><a href="#">Melancholy Middletons Yet Understood Decisively</a></h4>
-                                        <p>December 9th, 2015</p>
+                                        <h4><a href="{{ route('detailpost', $post->slug) }}">{{ $post->title }}</a></h4>
+                                        <p>{{ $post->CreatedAt }}</p>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="thumb">
-                                       <a href="#"><img src="images/blog/thumb2.png" alt="image"></a>
-                                    </div>
-                                    <div class="text">
-                                        <h4><a href="#">Melancholy Middletons Yet Understood Decisively</a></h4>
-                                        <p>December 9th, 2015</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                       <a href="#"><img src="images/blog/thumb3.png" alt="image"></a>
-                                    </div>
-                                    <div class="text">
-                                        <h4><a href="#">Melancholy Middletons Yet Understood Decisively</a></h4>
-                                        <p>December 9th, 2015</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                       <a href="#"><img src="images/blog/thumb4.png" alt="image"></a>
-                                    </div>
-                                    <div class="text">
-                                        <h4><a href="#">Melancholy Middletons Yet Understood Decisively</a></h4>
-                                        <p>December 9th, 2015</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                       <a href="#"><img src="images/blog/thumb5.png" alt="image"></a>
-                                    </div>
-                                    <div class="text">
-                                        <h4><a href="#">Melancholy Middletons Yet Understood Decisively</a></h4>
-                                        <p>December 9th, 2015</p>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ul><!-- /.post-news -->
                         </div><!-- /.widget .widget-recent-post style1 -->
 

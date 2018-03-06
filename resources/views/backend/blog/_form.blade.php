@@ -47,9 +47,9 @@
 
 <div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
 	<div class="x_panel">
-		<div class="x_content text-center">
+		<div class="tombol_upload btn btn-success x_content text-center">
 
-			<div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
+			{{--  <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
 				<div class="fileinput fileinput-new" data-provides="fileinput">
 					<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
 						<img src="{{ ($post->image_thumb) ? $post->image_thumb : 'http://placehold.it/200x150&text=No+Image' }}" alt="...">
@@ -61,19 +61,24 @@
 					</div>
 				</div>
 			</div>
-			{!! $errors->first('image', '<p class="help-block">:message</p>') !!}
-		</div>
+			{!! $errors->first('image', '<p class="help-block">:message</p>') !!}  --}}
+			{!! Form::file('image', ['class' => 'upload']) !!}
+		</div  class="thumbnail">
+		@if (isset($post) && $post->image !== '') 
+		<img src="{{ url($post->Image_Url) }}" class="img-rounded" id="gambar" width="200" height="150"/>
+		@else
+		<img src="#" id="gambar" width="200" height="150" class="img-rounded"/>
+		@endif
 	</div>
 </div>
+
+
 <div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
 	<div class="x_panel">
-
 		<div class="x_content text-center">
-
 			<div class="form-group">
 				{!! Form::submit('Publish', ['class' => 'btn btn-primary']) !!}
 			</div>
-
 		</div>
 	</div>
 </div>

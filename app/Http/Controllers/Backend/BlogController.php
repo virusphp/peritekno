@@ -29,6 +29,7 @@ class BlogController extends BackendController
      */
     public function index()
     {
+        
         $posts = Post::latest()->paginate($this->limit);
         return view('backend.blog.index', compact('posts'));
     }
@@ -167,7 +168,7 @@ class BlogController extends BackendController
     {
         $path = public_path() . DIRECTORY_SEPARATOR . 'f-n/images/blogs'
             . DIRECTORY_SEPARATOR . $filename;
-        $thumbnail = base_path() . '/public/f-n/images/blogs/tumb_'.$filename;
+        $thumbnail = base_path() . '/public/f-n/images/blogs/thumb_'.$filename;
 
         return File::delete($path, $thumbnail);
     }

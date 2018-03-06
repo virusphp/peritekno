@@ -32,17 +32,20 @@ class Post extends Model
 
     }
 
-    public function getImageThumbAttribute()
-	  {
-		$imageUrl = "";
+
+    public function getImageThumbAttribute($value)
+    {
+		$imageThumb = "";
 
 		if ( ! is_null($this->image) ) {
-			$imagePath = public_path() . "/f-n/images/blogs/thumb_" . $this->image;
-			if ( file_exists($imagePath)) $imageUrl = asset('f-n/images/blogs/thumb_'. $this->image);
+			$imagePath = public_path() . "/f-n/images/blogs/" . $this->image;
+			if ( file_exists($imagePath)) $imageThumb = asset('f-n/images/blogs/thumb_'. $this->image);
 		}
 
-		return $imageUrl;
+		return $imageThumb;
+
     }
+
 
     public function setTitleAttribute($value)
     {
@@ -58,5 +61,10 @@ class Post extends Model
     public function getTitleTableAttribute()
     {
       return substr($this->title,0,30);
+    }
+
+    public function getCreatedAtAttribute()
+    {
+      return \Carbon\Carbon::parse($this->attributes['created_at'])->format('d-M-Y');
     }
 }

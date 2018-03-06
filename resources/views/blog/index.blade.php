@@ -2,7 +2,7 @@
 @section('content')
     <!-- Page title -->
     <div class="page-title parallax parallax1">
-        <div class="overlay"></div>
+      <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -21,27 +21,49 @@
         </div><!-- /.container -->
     </div><!-- /.page-title -->
 
-    <!-- Blog fullwidth -->
-    <section class="main-content blog-fullwidth">
+    <!-- Flat courses -->
+    <section class="flat-row pad-bottom90px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-section style1">
+                        <h1 class="title">POPULER BLOG</h1>
+                        <div class="desc">
+                            <p>Berbagi ilmu<br> Tidak akan mengurangi ilmu yang kamu miliki</p>
+                        </div>
+                        <div class="icon">
+                            <img src="{{ asset('f-n/images/icon/line.png')}}" alt="image">
+                        </div>
+                    </div><!-- /.title-section -->
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
 
-        <div class="wrap-blog-fullwidth">
-            <div class="flat-grid margin20px clearfix">
-				@foreach($posts as $post)
-                <div class="flat-one-four">
-                    <article class="entry">
-                        <div class="feature-post">
-							@if($post->image_thumb == "")
-								<a href="#"></a>
-							@else
-								<a href="{{ route('detailpost', $post->slug) }}"><img src="{{ $post->image_thumb }}" alt="image"></a>
-							@endif
-                        </div><!-- /.feature-post -->
-                        <p class="entry-title"><a href="{{ route('detailpost', $post->slug) }}">{{ $post->title }}</a></p>
-                    </article><!-- /.entry -->
-                </div><!-- /.flat-one-four -->
-        @endforeach
-            </div><!-- /.flat-grid margin20px -->
-        </div><!-- /.wrap-blog-fullwidth -->
+            <div class="row">
+                <div class="flat-divider d55px"></div>
+            </div>
+            @foreach($posts as $post)
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="flat-courses">
+                        @if($post->image !== "")
+                        <div class="courses-thumbnail">
+                            <a href="{{ route('detailpost', $post->slug) }}"><img src="{{ $post->Image_Url }}" alt="{{ $post->Image_Url }}"></a>
+                            <a class="courses-viewmore" href="{{ route('detailpost', $post->slug) }}">View more</a>
+                        </div>
+                        @endif
+                        <div class="courses-content">
+                            <a href="{{ route('detailpost', $post->slug) }}"><h6 class="courses-topic">{{ $post->title }}</h6></a>
+                            {{--  <p>{{ $post->title  }}</p>  --}}
+                        </div>
+                    </div><!-- /.flat-courses -->
+                </div><!-- /.col-md-3 -->
+            @endforeach
+            </div><!-- /.row -->
+
+            {{--  @if($jlhdata >= 4)    
+            <div class="row">
+                <div class="flat-divider d40px"></div>
+            </div>
+            @endif  --}}
 
         <div class="container">
             <div class="row">
