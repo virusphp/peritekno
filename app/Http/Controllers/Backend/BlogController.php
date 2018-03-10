@@ -53,6 +53,7 @@ class BlogController extends BackendController
     public function store(PostRequest $request)
     {
 		$data = $this->handleRequest($request);
+
 		$newPost = $request->user()->posts()->create($data);
 
 		Session::flash('flash_notification', [
@@ -121,7 +122,6 @@ class BlogController extends BackendController
      */
     public function destroy($id)
     {
-    //dlete
         $post = Post::find($id);
         $data['image'] = $this->deleteImage($post->image);
         $post->delete();

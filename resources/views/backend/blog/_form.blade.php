@@ -24,7 +24,7 @@
 	<div class="x_panel">
 
 		<div class="x_title">
-			<h4>Category</h4>
+			<p>Category</p>
 		</div>
 
 		<div class="x_content">
@@ -45,33 +45,24 @@
 	</div>
 </div>
 
-<div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
+<div class="col-md-3 col-sm-3 col-xs-12">
 	<div class="x_panel">
-		<div class="tombol_upload btn btn-success x_content text-center">
-
-			{{--  <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
-				<div class="fileinput fileinput-new" data-provides="fileinput">
-					<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-						<img src="{{ ($post->image_thumb) ? $post->image_thumb : 'http://placehold.it/200x150&text=No+Image' }}" alt="...">
-					</div>
-					<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
-					<div>
-						<span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span>{!! Form::file('image') !!}</span>
-						<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-					</div>
+	 	<div class="x_content">
+			<div class="row">
+				<div class="image view view-first" style="width:224px; height:120px;">
+					 <img src="{{ ($post->image_thumb) ? $post->image_thumb : 'http://placehold.it/224x120&text=No+Image' }}" class="img" id="img" alt="...">
+					{!! Form::file('image', ['id' => 'image', 'class' => 'image-thumb']) !!}
+				</div>
+				<div class="clearfix"></div>
+				<div class="text-center">
+					<button type="button" id="browser_file" class="btn btn-primary form-control">
+						<i class="fa fa-camera"></i> 
+					</button>
 				</div>
 			</div>
-			{!! $errors->first('image', '<p class="help-block">:message</p>') !!}  --}}
-			{!! Form::file('image', ['class' => 'upload']) !!}
-		</div  class="thumbnail">
-		@if (isset($post) && $post->image !== '') 
-		<img src="{{ url($post->Image_Url) }}" class="img-rounded" id="gambar" width="200" height="150"/>
-		@else
-		<img src="#" id="gambar" width="200" height="150" class="img-rounded"/>
-		@endif
+	  	</div>
 	</div>
 </div>
-
 
 <div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
 	<div class="x_panel">
@@ -82,3 +73,4 @@
 		</div>
 	</div>
 </div>
+

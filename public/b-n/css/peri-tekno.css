@@ -71,3 +71,11 @@ p.text-center a {
 	font-size: 20px;
 }
 
+#image, .image-thumb {
+	display: none;
+}
+
+#img {
+	width: 224px;
+	height: 120px;
+}
