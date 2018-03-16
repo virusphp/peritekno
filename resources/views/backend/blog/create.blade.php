@@ -29,4 +29,3 @@
 </div>
 @endsection
 @include('backend.blog.script')
-

@@ -16,7 +16,7 @@
 			<td scope="row">{{ $no++ }}</td>
 			<td>{{ substr($post->title,0, 50) }}{{ strlen($post->title) > 50 ? "..." : "" }}</td>
 			<td>{{ $post->author->name }}</td>
-			<td>Category</td>
+			<td>{{ $post->category->name }}</td>
 			<td>{{ $post->created_at }}</td>
 			<td>
 				{!! Form::open(['route' => ['blog.destroy', $post->id], 'method' => 'DELETE']) !!}

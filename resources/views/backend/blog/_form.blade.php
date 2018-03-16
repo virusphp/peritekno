@@ -30,17 +30,30 @@
 		<div class="x_content">
 
 			<div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
-				<div class="col-md-12 col-sm-12 col-xs-12">
-				  {!! Form::select('category_id', App\Category::pluck('name', 'id'), null, ['placeholder' => 'Pilih Category', 'class' => 'form-control col-md-7 col-xs-12']) !!}
-			
-				  @if ($errors->has('category_id'))
-						 <span class="help-block">
-						 {!! $errors->first('category_id', '<p class="help-block">:message</p>') !!}
-						 </span>
-				  @endif
+				<div class="pull-left">
+				  	{!! Form::select('category_id', App\Category::pluck('name', 'id'), null, ['placeholder' => 'Pilih Category', 'class' => 'form-control col-md-8 col-xs-12']) !!}
+					{!! $errors->first('category_id', '<p class="help-block">:message</p>') !!}
+				</div>
+				<div class="pull-right">
+           	 		<a href="#" id="add-cat-btn" class="btn btn-default btn-block">Add</a>
 				</div>
 			</div>
 
+			<div class="row">	
+				<div class="form-group" id="add-new-cat" style="display: none;">
+				  <div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="input-group">
+					  <input type="text" name="name" id="new_cat" class="form-control">
+					  <span class="input-group-btn">
+						<a href="#" id="add-new-btn" class="btn btn-default">
+						  <i class="glyphicon glyphicon-ok"></i>
+						</a>
+					  </span>
+					</div>
+				  </div>
+				</div>
+			</div>
+			{!! Form::hidden('cat-slug', null, ['id' => 'cat-slug','class' => 'form-control col-md-7 col-xs-12']) !!}
 		</div>
 	</div>
 </div>

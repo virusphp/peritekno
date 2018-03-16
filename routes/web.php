@@ -38,5 +38,6 @@ Route::group(['prefix' => 'backend'], function() {
 
 	Route::get('home', 'Backend\HomeController@index')->name('home');
 	Route::resource('blog', 'Backend\BlogController');
+	Route::post('categories/save', 'Backend\CategoryController@saveCategory')->name('categories.saveCategory');
 	Route::resource('categories', 'Backend\CategoryController');
 });

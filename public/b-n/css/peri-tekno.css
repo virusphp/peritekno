@@ -79,3 +79,16 @@ p.text-center a {
 	width: 224px;
 	height: 120px;
 }
+
+.input-cat-btn {
+	position: relative;
+    font-size: 0;
+    white-space: nowrap;
+	width: 1%;
+    vertical-align: middle;
+	display: table-cell;
+}
+
+*, :after, :before {
+	box-sizing: border-box;
+}

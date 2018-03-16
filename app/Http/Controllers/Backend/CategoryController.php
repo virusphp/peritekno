@@ -44,6 +44,11 @@ class CategoryController extends BackendController
 		return redirect()->route('categories.index')->with('message', 'Kategori berhasil di buat!.');		
     }
 
+    public function saveCategory(CategoryRequest $request)
+	{
+		return Category::create($request->all());
+	}
+
     /**
      * Display the specified resource.
      *

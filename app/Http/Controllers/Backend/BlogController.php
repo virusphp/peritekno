@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Post;
 use App\User;
+use App\Category;
 
 use Intervention\Image\Facades\Image;
 use File;
