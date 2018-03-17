@@ -44,15 +44,19 @@
             @foreach($posts as $post)
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="flat-courses">
-                        @if($post->image !== "")
-                        <div class="courses-thumbnail">
-                            <a href="{{ route('detailpost', $post->slug) }}"><img src="{{ $post->Image_Url }}" alt="{{ $post->Image_Url }}"></a>
-                            <a class="courses-viewmore" href="{{ route('detailpost', $post->slug) }}">View more</a>
-                        </div>
+                        @if ($post->image_thumb_url)
+							<div class="courses-thumbnail">
+								<a href="{{ route('detailpost', $post->slug) }}">
+									<img src="{{ $post->image_thumb_url }}" alt="{{ $post->slug }}">
+								</a>
+								<a class="courses-viewmore" href="{{ route('detailpost', $post->slug) }}">View more</a>
+							</div>
                         @endif
+
                         <div class="courses-content">
-                            <a href="{{ route('detailpost', $post->slug) }}"><h6 class="courses-topic">{{ $post->title }}</h6></a>
-                            {{--  <p>{{ $post->title  }}</p>  --}}
+							<a href="{{ route('detailpost', $post->slug) }}">
+								<h6 class="courses-topic">{{ $post->title }}</h6>
+							</a>
                         </div>
                     </div><!-- /.flat-courses -->
                 </div><!-- /.col-md-3 -->

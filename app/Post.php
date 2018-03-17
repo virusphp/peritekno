@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $fillable = ['author_id', 'title', 'slug', 'body', 'image', 'category_id'];
+	protected $dates = ['published_at'];
 
     public function author()
     {
@@ -32,18 +33,16 @@ class Post extends Model
 
     }
 
-
-    public function getImageThumbAttribute($value)
+    public function getImageThumbUrlAttribute($value)
     {
-		$imageThumb = "";
+		$imageThumbUrl = "";
 
 		if ( ! is_null($this->image) ) {
 			$imagePath = public_path() . "/f-n/images/blogs/" . $this->image;
-			if ( file_exists($imagePath)) $imageThumb = asset('f-n/images/blogs/thumb_'. $this->image);
+			if ( file_exists($imagePath)) $imageThumbUrl = asset('f-n/images/blogs/'. $this->image);
 		}
 
-		return $imageThumb;
-
+		return $imageThumbUrl;
     }
 
 
@@ -63,8 +62,13 @@ class Post extends Model
       return substr($this->title,0,30);
     }
 
-    public function getCreatedAtAttribute()
+    public function getDateAttribute($value)
     {
-      return \Carbon\Carbon::parse($this->attributes['created_at'])->format('d-M-Y');
+      return is_null($this->published_at) ? '' : $this->published_at->diffForHumans();
     }
+
+	public function scopePublished($query)
+	{
+		return $query->where("published_at", "<=", Carbon::now());
+	}
 }

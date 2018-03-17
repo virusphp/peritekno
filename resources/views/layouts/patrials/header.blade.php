@@ -46,27 +46,12 @@
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
                                 <li class="home">
-                                    <a href="{{ url ('/')}}">Home</a>
+                                    <a href="{{ url ('/')}}">{{ __('Home') }}</a>
                                 </li>
-                                <li><a href="course.html">Tutorial</a>
-                                    <ul class="submenu">
-                                        @foreach($categories as $category)
-                                        <li><a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a></li>
-                                        @endforeach
-                                    </ul><!-- /.submenu -->
-                                </li>
+                                <li><a href="{{ route('blog') }}">{{ __('Tutorial') }}</a></li>
 
-                                <li><a href="blog.html">Artikel</a>
-                                    <ul class="submenu right-sub-menu">
-                                      <li><a href="{{ url('/tutorial') }}">PHP</a></li>
-                                      <li><a href="{{ url('/tutorial') }}">Design</a></li>
-                                      <li><a href="{{ url('/tutorial') }}">Server</a></li>
-                                      <li><a href="{{ url('/tutorial') }}">Seo</a></li>
-                                      <li><a href="{{ url('/tutorial') }}">Instalasi</a></li>
-                                    </ul><!-- /.submenu -->
-                                </li>
-                                <li><a href="{{ url('/about') }}">Bacaan </a></li>
-                                <li><a href="{{ url('/about') }}">About Us</a></li>
+                                <li><a href="#">{{ __('Bacaan') }}</a></li>
+                                <li><a href="{{ url('/about') }}">{{ __('About') }}</a></li>
                             </ul><!-- /.menu -->
                         </nav><!-- /.mainnav -->
                     </div><!-- /.nav-wrap -->

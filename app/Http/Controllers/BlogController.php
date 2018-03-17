@@ -3,23 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use App\Post;
-use App\Category;
 
 class BlogController extends Controller
 {
-  protected $limit = 5;
-  public function blog()
-  {
-    $posts = Post::orderBy('created_at', 'asc')->paginate(8);
-    return view('blog.index', compact('posts'));
-  }
+	protected $limit = 4;
 
-  public function detailpost($slug)
-  {
-    $categories = Category::All();
-    $detailpost = Post::where('slug', $slug)->first();
-    $postTerakhir = Post::latest()->paginate($this->limit);
-    return view('blog.detailPost', compact('detailpost', 'categories', 'postTerakhir'));
-  }
+	public function blog()
+	{
+//		\DB::enableQueryLog();
+		$posts = Post::latest()->published()->paginate($this->limit);
+
+		return view('blog.index', compact('posts'));
+//		dd(\DB::getQueryLog());
+	}
+
+	public function detailpost($slug)
+	{
+		$detailpost = Post::with('author')->where('slug', $slug)->first();
+
+		return view('blog.detailPost', compact('detailpost'));
+	}
 }

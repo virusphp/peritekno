@@ -30,12 +30,7 @@
                     <div class="col-md-9">
                         <article class="entry">
                             <div class="feature-post">
-                                    @if($detailpost->image !== "")
-                                    <div class="courses-thumbnail">
-                                            <img src="{{ $detailpost->image_url }}" alt="image">
-                                    </div>
-                                    @endif
-                               
+                                <img src="{{ $detailpost->image_url }}" alt="image">
                             </div><!-- /.feature-post -->
                             <div class="main-post">
                                 <h2 class="title-post"><a href="#">{{ $detailpost->title }}</a></h2>
@@ -44,7 +39,7 @@
                                         <li class="post-author">
                                             <span><a href="#">{{ $detailpost->author->name }}</a></span>
                                         </li>
-                                        <li class="post-date">{{ $detailpost->CreatedAT }}</li>
+                                        <li class="post-date">{{ $detailpost->date }}</li>
                                         <li class="post-categories">
                                             <a href="#">Graphic</a>,
                                             <a href="#">Website</a>
@@ -141,7 +136,7 @@
                                         </li>
                                     </ul><!-- /.comment-list -->
                                 </div><!-- /.comment-list-wrap -->
-                                
+
                                 <div id="respond" class="comment-respond">
                                     <h4 class="title comment-title">Add a review</h4>
                                     <form class="flat-contact-form" id="contactform5" method="post" action="./contact/contact-process.php">
@@ -171,49 +166,31 @@
                         <div class="widget widget-categories">
                             <h5 class="widget-title">Categories</h5>
                             <ul>
-                                    @foreach($categories as $category)
-                                    <li><a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a><span><strong>({{ $category->posts->count() }})</strong></span></li>
-                                    @endforeach
-                                {{--  <li><a href="#">Photoshop<span>(5)</span></a></li>  --}}
+                                <li><a href="#">Photoshop<span>(5)</span></a></li>
+                                <li><a href="#">Illustrator<span>(5)</span></a></li>
                             </ul>
                         </div><!-- /.widget .widget-categories -->
 
-                        <div class="widget widget-recent-post">
-                            <h5 class="widget-title">Recent Posts</h5>
-                            <ul>
-                                @foreach ($postTerakhir as $post )
-                                <li><a href="{{ route('detailpost', $post->slug) }}">{{ $post->title }}</a></li>
-                                @endforeach
-                              
-                            </ul>
-                        </div><!-- /.widget .widget-recent-post -->
-
                         <div class="widget widget-tags">
-                            <h5 class="widget-title">Tab</h5>
+                            <h5 class="widget-title">Tag</h5>
                             <div class="tag-list">
                                 <a href="#">Design</a>
-                                <a href="#">Branding</a>
                                 <a href="#">Concept</a>
-                                <a href="#">Website</a>
-                                <a href="#">App</a>
-                                <a href="#">Photography</a>
                             </div>
                         </div><!-- /.widget .widget-tags -->
 
                         <div class="widget widget-recent-post style1">
                             <h5 class="widget-title">popular posts</h5>
                             <ul class="post-news clearfix">
-                                @foreach ($postTerakhir as $post)                                    
                                 <li>
                                     <div class="thumb">
-                                        <a href="#"><img src="{{ $post->ImageThumb }}" alt="image"></a>
+                                        <a href="#"><img src="images/blog/thumb1.png" alt="image"></a>
                                     </div>
                                     <div class="text">
-                                        <h4><a href="{{ route('detailpost', $post->slug) }}">{{ $post->title }}</a></h4>
-                                        <p>{{ $post->CreatedAt }}</p>
+                                        <h4><a href="#">Melancholy Middletons Yet Understood Decisively</a></h4>
+                                        <p>December 9th, 2015</p>
                                     </div>
                                 </li>
-                                @endforeach
                             </ul><!-- /.post-news -->
                         </div><!-- /.widget .widget-recent-post style1 -->
 
@@ -236,11 +213,6 @@
                                 </div>
                             </div><!-- /.flat-client -->
                         </div><!-- /.widget-featured-post -->
-
-                        <div class="widget widget-tweets">
-                            <h5 class="widget-title">Recent Twitter</h5>
-                            <div class="list-tiwtter" data-number="2" data-username="envato" data-modpath="twitter/index.php"><p class="loading">Loading Tweets...</p></div>
-                        </div><!-- /.widget -->
 
                         <div class="widget widget-subscribe">
                             <h5 class="widget-title-subscribe">Subscribe</h5>
