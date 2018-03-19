@@ -8,12 +8,6 @@
                 <div class="col-md-12">
                     <div class="page-title-heading">
                         <h1 class="title">SELAMAT DATANG DI PERITECHNO</h1>
-                        <div class="breadcrumbs">
-                            <ul>
-                                <li><a href="{{ url('/') }}">Home</a></li>
-                                <li>All Post</li>
-                            </ul>
-                        </div>
                     </div><!-- /.page-title-captions -->
 
                 </div><!-- /.col-md-12 -->
@@ -24,50 +18,67 @@
     <!-- Flat courses -->
     <section class="flat-row pad-bottom90px">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title-section style1">
-                        <h1 class="title">POPULER BLOG</h1>
-                        <div class="desc">
-                            <p>Berbagi ilmu<br> Tidak akan mengurangi ilmu yang kamu miliki</p>
-                        </div>
-                        <div class="icon">
-                            <img src="{{ asset('f-n/images/icon/line.png')}}" alt="image">
-                        </div>
-                    </div><!-- /.title-section -->
-                </div><!-- /.col-md-12 -->
-            </div><!-- /.row -->
-
-            <div class="row">
-                <div class="flat-divider d55px"></div>
-            </div>
-            @foreach($posts as $post)
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="flat-courses">
-                        @if ($post->image_thumb_url)
-							<div class="courses-thumbnail">
-								<a href="{{ route('detailpost', $post->slug) }}">
-									<img src="{{ $post->image_thumb_url }}" alt="{{ $post->slug }}">
-								</a>
-								<a class="courses-viewmore" href="{{ route('detailpost', $post->slug) }}">View more</a>
+			@if (! count($posts) )
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title-section style1">
+							<h1 class="title">Tidak Ditemukan</h1>
+							<div class="desc">
+								<p>Berbagi ilmu<br> Tidak akan mengurangi ilmu yang kamu miliki</p>
 							</div>
-                        @endif
+							<div class="icon">
+								<img src="{{ asset('f-n/images/icon/line.png')}}" alt="image">
+							</div>
+						</div><!-- /.title-section -->
+					</div><!-- /.col-md-12 -->
+				</div><!-- /.row -->
+			@else
+				@if (isset($categoryName))
+					<div class="row">
+						<div class="col-md-12">
+							<div class="title-section style1">
+								<h1 class="title">{{ $categoryName }}</h1>
+								<div class="desc">
+									<p>Berbagi ilmu<br> Tidak akan mengurangi ilmu yang kamu miliki</p>
+								</div>
+								<div class="icon">
+									<img src="{{ asset('f-n/images/icon/line.png')}}" alt="image">
+								</div>
+							</div><!-- /.title-section -->
+						</div><!-- /.col-md-12 -->
+					</div><!-- /.row -->
+				@endif
 
-                        <div class="courses-content">
-							<a href="{{ route('detailpost', $post->slug) }}">
-								<h6 class="courses-topic">{{ $post->title }}</h6>
-							</a>
-                        </div>
-                    </div><!-- /.flat-courses -->
-                </div><!-- /.col-md-3 -->
-            @endforeach
-            </div><!-- /.row -->
+				<div class="row">
+					<div class="flat-divider d55px"></div>
+				</div>
 
-            {{--  @if($jlhdata >= 4)    
+				@foreach ($posts as $post)
+					<div class="col-md-3 col-sm-6 col-xs-6">
+						<div class="flat-courses">
+							@if ($post->image_thumb_url)
+								<div class="courses-thumbnail">
+									<a href="{{ route('detailpost', $post->slug) }}">
+										<img src="{{ $post->image_thumb_url }}" alt="{{ $post->slug }}">
+									</a>
+									<a class="courses-viewmore" href="{{ route('detailpost', $post->slug) }}">View more</a>
+								</div>
+							@endif
+
+							<div class="courses-content">
+								<a href="{{ route('detailpost', $post->slug) }}">
+									<h6 class="courses-topic">{{ $post->title }}</h6>
+								</a>
+							</div>
+						</div><!-- /.flat-courses -->
+					</div><!-- /.col-md-3 -->
+				@endforeach
+				</div><!-- /.row -->
+			@endif
+
             <div class="row">
                 <div class="flat-divider d40px"></div>
             </div>
-            @endif  --}}
 
         <div class="container">
             <div class="row">
