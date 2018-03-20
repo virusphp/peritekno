@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Category; 
+use App\Post; 
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -20,7 +21,12 @@ class ComposerServiceProvider extends ServiceProvider
 				$query->published();
 			}])->orderBy('name', 'asc')->get();
 
-			$view->with('categories', $categories);
+			return $view->with('categories', $categories);
+		});
+
+		view()->composer('blog.widget.widget', function($view) {
+			$popularPosts = Post::published()->popular()->take(3)->get();
+			return $view->with('popularPosts', $popularPosts);	
 		});
     }
 

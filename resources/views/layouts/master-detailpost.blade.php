@@ -21,6 +21,8 @@
 	<!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/animate.css') }}">
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('f-n/stylesheets/custome.css') }}">
+
     <!-- Favicon and touch icons  -->
     <link href="f-n/icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
     <link href="f-n/icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">

@@ -39,7 +39,7 @@
                                             <span><a href="{{ route('author', $detailpost->author->slug) }}">{{ $detailpost->author->name }}</a></span>
                                         </li>
                                         <li class="post-date">{{ $detailpost->date }}</li>
-                                        <li class="post-categories">
+                                        <li>
                                             <a href="{{ route('category', $detailpost->category->slug ) }}">{{ $detailpost->category->name }}</a>
                                         </li>
                                     </ul>
@@ -72,7 +72,7 @@
                                 <h4 class="title">About author</h4>
                                 <article class="author">
                                     <div class="author-avatar">
-                                        <img src="images/blog/author-avatar.jpg" alt="image">
+                                        <img src="{{ $detailpost->author->gravatar() }}" width="80" height="100" alt="{{ $detailpost->author->name }}">
                                     </div>
                                     <div class="position">
                                         <div class="author-meta">
@@ -95,7 +95,7 @@
                                         </li>
                                     </ul>
                                     <div class="author-detail">
-                                        <p class="author-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at eros vitae libero posuere efficitur et vel erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce lacinia risus metus, quis sodales ipsum aliquam vel. Duis accumsan fringilla justo vel dignissim.</p>
+                                        {!! $detailpost->author->bio_html !!}
                                     </div>
                                 </article><!-- /.comment -->
                             </div><!-- /.author-post -->

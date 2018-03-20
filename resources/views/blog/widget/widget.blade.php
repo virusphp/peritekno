@@ -25,15 +25,19 @@
 		<div class="widget widget-recent-post style1">
 			<h5 class="widget-title">popular posts</h5>
 			<ul class="post-news clearfix">
+				@foreach ($popularPosts as $post)
 				<li>
-					<div class="thumb">
-						<a href="#"><img src="images/blog/thumb1.png" alt="image"></a>
-					</div>
+					@if ($post->image_thumb_url)
+						<div class="thumb">
+							<a href="{{ route('detailpost', $post->slug) }}"><img src="{{ $post->image_thumb_url }}" alt="image"></a>
+						</div>
+					@endif
 					<div class="text">
-						<h4><a href="#">Melancholy Middletons Yet Understood Decisively</a></h4>
-						<p>December 9th, 2015</p>
+						<h4><a href="{{ route('detailpost', $post->slug) }}">{{ $post->title }}</a></h4>
+						<p>{{ $post->date }}</p>
 					</div>
 				</li>
+				@endforeach
 			</ul><!-- /.post-news -->
 		</div><!-- /.widget .widget-recent-post style1 -->
 
