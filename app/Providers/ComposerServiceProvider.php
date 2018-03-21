@@ -3,8 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Category; 
-use App\Post; 
+use App\Views\Composers\NavigationComposer;
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -16,18 +15,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-		view()->composer('blog.widget.widget', function($view) {
-			$categories = Category::with(['posts' => function($query) {
-				$query->published();
-			}])->orderBy('name', 'asc')->get();
-
-			return $view->with('categories', $categories);
-		});
-
-		view()->composer('blog.widget.widget', function($view) {
-			$popularPosts = Post::published()->popular()->take(3)->get();
-			return $view->with('popularPosts', $popularPosts);	
-		});
+		view()->composer('blog.widget.widget', NavigationComposer::class);
     }
 
     /**

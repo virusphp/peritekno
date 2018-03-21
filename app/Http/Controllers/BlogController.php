@@ -23,7 +23,10 @@ class BlogController extends Controller
 
 	public function show(Post $detailpost)
 	{
-		return view('blog.detailPost', compact('detailpost', 'categories'));
+
+		$detailpost->increment('view_count');
+
+		return view('blog.detailPost', compact('detailpost'));
 	}
 
 	public function category(Category $category)
