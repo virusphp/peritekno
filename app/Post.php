@@ -46,12 +46,12 @@ class Post extends Model
 		return $imageThumbUrl;
     }
 
-
-    public function setTitleAttribute($value)
-    {
-    	$this->attributes['title'] = $value;
-    	$this->attributes['slug']  = str_slug($value);
-    }
+//
+//    public function setTitleAttribute($value)
+//    {
+//    	$this->attributes['title'] = $value;
+//    	$this->attributes['slug']  = str_slug($value);
+//    }
 
     public function getBodyTableAttribute()
     {
@@ -83,4 +83,8 @@ class Post extends Model
 		return $query->orderBy('view_count', 'desc');
 	}
 
+	public function getRouteKeyName()
+	{
+		return 'slug';
+	}
 }

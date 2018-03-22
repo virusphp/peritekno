@@ -21,12 +21,11 @@ class BlogController extends Controller
 //		dd(\DB::getQueryLog());
 	}
 
-	public function show(Post $detailpost)
+	public function show(Post $post)
 	{
+		$post->increment('view_count');
 
-		$detailpost->increment('view_count');
-
-		return view('blog.detailPost', compact('detailpost'));
+		return view('blog.detailPost', compact('post'));
 	}
 
 	public function category(Category $category)

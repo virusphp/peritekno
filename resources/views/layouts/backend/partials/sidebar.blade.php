@@ -8,11 +8,12 @@
 
     <!-- menu profile quick info -->
     <div class="profile clearfix">
+		<?php $currentUser = Auth::user() ?>
       <div class="profile_pic">
-        <img src="{{ asset('b-n/images/img.jpg') }}" alt="..." class="img-circle profile_img">
+        <img src="{{ $currentUser->gravatar() }}" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
-        <span>Welcome, nama</span>
+        <span>{{ $currentUser->name }}</span>
         <h2></h2>
       </div>
     </div>

@@ -29,18 +29,18 @@
                     <div class="col-md-9">
                         <article class="entry">
                             <div class="feature-post">
-                                <img src="{{ $detailpost->image_url }}" alt="image">
+                                <img src="{{ $post->image_url }}" alt="image">
                             </div><!-- /.feature-post -->
                             <div class="main-post">
-                                <h2 class="title-post"><a href="#">{{ $detailpost->title }}</a></h2>
+                                <h2 class="title-post"><a href="#">{{ $post->title }}</a></h2>
                                 <div class="meta-post clearfix">
                                     <ul>
                                         <li class="post-author">
-                                            <span><a href="{{ route('author', $detailpost->author->slug) }}">{{ $detailpost->author->name }}</a></span>
+                                            <span><a href="{{ route('author', $post->author->slug) }}">{{ $post->author->name }}</a></span>
                                         </li>
-                                        <li class="post-date">{{ $detailpost->date }}</li>
+                                        <li class="post-date">{{ $post->date }}</li>
                                         <li>
-                                            <a href="{{ route('category', $detailpost->category->slug ) }}">{{ $detailpost->category->name }}</a>
+                                            <a href="{{ route('category', $post->category->slug ) }}">{{ $post->category->name }}</a>
                                         </li>
                                     </ul>
                                 </div><!-- /.meta-post -->
@@ -48,7 +48,7 @@
                                     <p>descripsion</p>
                                 </div>
                                 <div class="entry-post">
-                                  {!! $detailpost->body_html !!}
+                                  {!! $post->body_html !!}
                                 </div><!-- /.entry-post -->
                                 <ul class="flat-socials">
                                     <li>
@@ -72,11 +72,11 @@
                                 <h4 class="title">About author</h4>
                                 <article class="author">
                                     <div class="author-avatar">
-                                        <img src="{{ $detailpost->author->gravatar() }}" width="80" height="100" alt="{{ $detailpost->author->name }}">
+                                        <img src="{{ $post->author->gravatar() }}" width="80" height="100" alt="{{ $post->author->name }}">
                                     </div>
                                     <div class="position">
                                         <div class="author-meta">
-                                            <h4><a href="{{ route('author', $detailpost->slug) }}">{{ $detailpost->author->name }}</a></h4>
+                                            <h4><a href="{{ route('author', $post->slug) }}">{{ $post->author->name }}</a></h4>
                                             <p>Wed Design Teacher</p>
                                         </div>
                                     </div>
@@ -95,7 +95,7 @@
                                         </li>
                                     </ul>
                                     <div class="author-detail">
-                                        {!! $detailpost->author->bio_html !!}
+                                        {!! $post->author->bio_html !!}
                                     </div>
                                 </article><!-- /.comment -->
                             </div><!-- /.author-post -->
