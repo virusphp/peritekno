@@ -92,3 +92,7 @@ p.text-center a {
 *, :after, :before {
 	box-sizing: border-box;
 }
+
+.pagination {
+	margin: 0;
+}

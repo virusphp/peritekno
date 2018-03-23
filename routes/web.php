@@ -41,10 +41,10 @@ Route::get('author/{author}', [
 	'as'   => 'author'
 ]);
 
-Route::group(['prefix' => 'backend'], function() {
+Route::group(['namespace' => 'Backend', 'prefix' => 'backend'], function() {
 
-	Route::get('home', 'Backend\HomeController@index')->name('home');
-	Route::resource('blog', 'Backend\BlogController');
-	Route::post('categories/save', 'Backend\CategoryController@saveCategory')->name('categories.saveCategory');
-	Route::resource('categories', 'Backend\CategoryController');
+	Route::get('home', 'HomeController@index')->name('home');
+	Route::resource('blog', 'BlogController');
+	Route::post('categories/save', 'CategoryController@saveCategory')->name('categories.saveCategory');
+	Route::resource('categories', 'CategoryController');
 });
