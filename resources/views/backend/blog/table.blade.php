@@ -24,10 +24,10 @@
 			<td>
 				{!! Form::open(['route' => ['blog.destroy', $post->id], 'method' => 'DELETE']) !!}
 				<a href="{{ route ('blog.edit',$post->id) }}" class="btn btn-warning btn-xs">
-					<i class="fa fa-pencil"></i> Edit 
+					<i class="fa fa-pencil"></i> 
 				</a>
 				<button type="submit"  class="btn btn-danger btn-xs" onclick="return confirm('Apakah kamu yakin ingin Menghapus data ini')" >
-					<i class="fa fa-trash-o"></i> Hapus 
+					<i class="fa fa-trash-o"></i> 
 				</button>
 				{!! Form::close() !!}
 			</td>
@@ -42,7 +42,6 @@
 			{!! $posts->links() !!}
 		</div>
 		<div class="pull-right">
-			<?php $postCount = $posts->count() ?>
 			{{ $postCount }} {{ str_plural('Item', $postCount) }}
 		</div>
 	</div>

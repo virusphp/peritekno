@@ -77,6 +77,20 @@
 	</div>
 </div>
 
+<div class="col-md-3 col-sm-3 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title">
+			<p>Published Date</p>
+		</div>
+
+	 	<div class="x_content">
+			<div class="form-group">
+				{!! Form::text('published_at', null, ['class' => 'form-control']) !!}
+			</div>
+	  	</div>
+	</div>
+</div>
+
 <div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
 	<div class="x_panel">
 		<div class="x_content text-center">

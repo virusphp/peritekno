@@ -8,7 +8,7 @@ use GrahamCampbell\Markdown\Facades\Markdown;
 
 class Post extends Model
 {
-    protected $fillable = ['author_id', 'title', 'slug', 'body', 'image', 'category_id', 'view_count'];
+    protected $fillable = ['author_id', 'title', 'slug', 'body', 'image', 'category_id', 'published_at', 'view_count'];
 	protected $dates = ['published_at'];
 
     public function author()
@@ -20,6 +20,11 @@ class Post extends Model
     {
     	return $this->belongsTo(Category::class);
     }
+
+	public function setPublishedAtAttribute($value)
+	{
+		return $this->attributes['published_at'] = $value ?: NULL;
+	}
 
     public function getImageUrlAttribute($value)
     {
@@ -45,13 +50,6 @@ class Post extends Model
 
 		return $imageThumbUrl;
     }
-
-//
-//    public function setTitleAttribute($value)
-//    {
-//    	$this->attributes['title'] = $value;
-//    	$this->attributes['slug']  = str_slug($value);
-//    }
 
     public function getBodyTableAttribute()
     {

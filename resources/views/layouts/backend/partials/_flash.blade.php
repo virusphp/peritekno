@@ -7,6 +7,12 @@
 </div>
 @endif
 
+@if (session('success'))
+<div class="alert alert-success">
+	{{ session('message') }}
+</div>
+@endif
+
 <script>
 	window.setTimeout(function() {
     	$(".alert").fadeTo(500, 0).slideUp(500, function(){

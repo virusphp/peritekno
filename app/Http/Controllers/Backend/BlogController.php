@@ -32,7 +32,8 @@ class BlogController extends BackendController
     {
         
         $posts = Post::with('category','author')->latest()->paginate($this->limit);
-        return view('backend.blog.index', compact('posts'));
+		$postCount = Post::count();
+        return view('backend.blog.index', compact('posts', 'postCount'));
     }
 
     /**
@@ -145,7 +146,7 @@ class BlogController extends BackendController
 			$height    = config('cms.image.thumbnail.height');
 			$image     = $request->file('image');
 			$extension = $image->guessClientExtension();
-			$fileName  = str_random(40) . '.' . $extension;
+			$fileName  = 'blogs_' . str_random(40) . '.' . $extension;
 			$destination = $this->uploadPath;
 
 			$successUpload = Image::make($image->getRealPath())

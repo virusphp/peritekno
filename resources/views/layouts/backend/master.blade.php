@@ -22,7 +22,7 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-	  @include('layouts.backend.partials._flash')
+	{{--  @include('layouts.backend.partials._flash') --}}
 
 	  {{-- menu --}}
 	  @include('layouts.backend.partials.sidebar')

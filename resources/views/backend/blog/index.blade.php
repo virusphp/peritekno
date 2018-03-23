@@ -29,19 +29,25 @@
             <div class="clearfix"></div>
 
             <div class="col-md-12 col-sm-12 col-xs-12">
+				<p><a href="{{ route('blog.create') }}"><button class="btn btn-primary btn-sm">Tambah</button></a></p>
+
                 <div class="x_panel">
-
-					<div class="x_title">
-						<h2>Post</h2>
-							<ul class="nav navbar-right panel_toolbox">
-								<a href="{{ route('blog.create') }}"><button class="btn btn-primary btn-sm">Tambah</button></a>
-							</ul>
-						<div class="clearfix"></div>
+					@if (session('flash_notification.message'))
+					<div class="alert alert-{{ session('flash_notification.level') }}">
+        				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						{!! session('flash_notification.message') !!}
 					</div>
+					@endif
 
-                 	<div class="x_content">
-	                	@include('backend.blog.table')
-					</div>
+					@if (! $posts->count())
+						<div class="alert alert-danger">
+							<strong>No Record</strong>
+						</div>
+					@else
+						<div class="x_content">
+							@include('backend.blog.table')
+						</div>
+					@endif
 
 				</div>
 			</div>
