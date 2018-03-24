@@ -14,6 +14,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('b-n/plugin/font-awesome/css/font-awesome.min.css') }}">
 
+	<link rel="stylesheet" href="{{ asset('b-n/plugin/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('b-n/css/custom.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('b-n/css/peri-tekno.css') }}">
 
@@ -44,6 +45,9 @@
 	<script src="{{ asset('b-n/js/bootstrap.min.js') }}"></script>
     {{-- tinymce --}}
     <script src="{{ asset('b-n/plugin/tinymce/tinymce.min.js') }}"></script>
+
+    <script src="{{ asset('b-n/plugin/moment/min/moment.min.js') }}"></script>
+    <script src="{{ asset('b-n/plugin/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
 
 	<!-- Custom Theme Scripts -->
 	<script src="{{ asset('b-n/js/custom.min.js') }}"></script>

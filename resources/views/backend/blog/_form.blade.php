@@ -85,7 +85,12 @@
 
 	 	<div class="x_content">
 			<div class="form-group">
-				{!! Form::text('published_at', null, ['class' => 'form-control']) !!}
+				<div class='input-group date' id='published_at'>
+					{!! Form::text('published_at', null, ['class' => 'form-control', 'placeholder' => 'Y-m-d H:i:s']) !!}
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
 			</div>
 	  	</div>
 	</div>

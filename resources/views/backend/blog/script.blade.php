@@ -12,7 +12,8 @@
     });
 
 	tinymce.init({
-		selector: '#editor'
+		selector: '#editor',
+		height:   '350'
 	});
 
 	$('#browser_file').on('click', function(e) {
@@ -101,6 +102,11 @@
 				}
 			}
 		});
+	});
+
+	$("#published_at").datetimepicker({
+		format: "YYYY-MM-DD HH:mm:ss",
+		showClear: true	
 	});
 
 </script>
