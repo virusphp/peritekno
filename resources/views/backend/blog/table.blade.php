@@ -1,4 +1,4 @@
-	<table class="table table-responsive">
+	<table class="table table-responsive table-bordered table-striped jambo_table bulk_action">
 	  <thead>
 		<tr>
 			<th>#</th>
