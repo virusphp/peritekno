@@ -104,10 +104,16 @@
 		});
 	});
 
-	$("#published_at").datetimepicker({
+	$("#datetimepicker1").datetimepicker({
 		format: "YYYY-MM-DD HH:mm:ss",
 		showClear: true	
 	});
 
+	// button draft	
+	$('#draft-btn').click(function(e) {
+		e.preventDefault();
+		$('#publilshed_at').val("");
+		$('#post-form').submit();	
+	});
 </script>
 @endpush

@@ -60,6 +60,10 @@
 
 <div class="col-md-3 col-sm-3 col-xs-12">
 	<div class="x_panel">
+		<div class="x_title">
+			<p>Fiture Image</p>
+		</div>
+
 	 	<div class="x_content">
 			<div class="row">
 				<div class="image view view-first" style="width:224px; height:120px;">
@@ -85,24 +89,25 @@
 
 	 	<div class="x_content">
 			<div class="form-group">
-				<div class='input-group date' id='published_at'>
-					{!! Form::text('published_at', null, ['class' => 'form-control', 'placeholder' => 'Y-m-d H:i:s']) !!}
+				<div class='input-group date' id='datetimepicker1'>
+					{!! Form::text('published_at', null, ['id' => 'published_at', 'class' => 'form-control', 'placeholder' => 'Y-m-d H:i:s']) !!}
 					<span class="input-group-addon">
 						<span class="glyphicon glyphicon-calendar"></span>
 					</span>
 				</div>
 			</div>
+
+			<div class="ln_solid clearfix"></div>
+
+			<div>
+				<div class="pull-left">
+					<a id="draft-btn" class="btn btn-default" href="#">Save Draft</a>
+				</div>
+				<div class="pull-right">
+					{!! Form::submit('Publish', ['class' => 'btn btn-primary']) !!}
+				</div>
+			</div>
+
 	  	</div>
 	</div>
 </div>
-
-<div class="col-md-3 col-sm-3 col-xs-12 widget widget_tally_box">
-	<div class="x_panel">
-		<div class="x_content text-center">
-			<div class="form-group">
-				{!! Form::submit('Publish', ['class' => 'btn btn-primary']) !!}
-			</div>
-		</div>
-	</div>
-</div>
-

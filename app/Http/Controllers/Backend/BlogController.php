@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
 use App\Post;
 use App\User;
 use App\Category;
 
+use Illuminate\Http\Request;
+use App\Http\Requests;
+
 use Intervention\Image\Facades\Image;
 use File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Session;
-
+use Session; 
 class BlogController extends BackendController
 {
     protected $uploadPath;
@@ -52,9 +52,10 @@ class BlogController extends BackendController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(Request $request)
     {
 		$data = $this->handleRequest($request);
+		dd($data);
 
 		$newPost = $request->user()->posts()->create($data);
 
