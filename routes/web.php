@@ -45,6 +45,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend'], function() {
 
 	Route::get('home', 'HomeController@index')->name('home');
 	Route::put('blog/restore/{blog}', 'BlogController@restore')->name('blog.restore');
+	Route::delete('blog/force-destroy/{blog}', 'BlogController@forceDestroy')->name('blog.force-destroy');
 	Route::resource('blog', 'BlogController');
 	Route::post('categories/save', 'CategoryController@saveCategory')->name('categories.saveCategory');
 	Route::resource('categories', 'CategoryController');

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Backend;
 
-
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 
@@ -29,12 +28,23 @@ class BlogController extends BackendController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        
-        $posts = Post::with('category','author')->latest()->paginate($this->limit);
-		$postCount = Post::count();
-        return view('backend.blog.index', compact('posts', 'postCount'));
+		if (($status = $request->get('status')) && $status == 'trash')
+		{
+			$posts       = Post::onlyTrashed()->with('category','author')->latest()->paginate($this->limit);
+			$postCount   = Post::onlyTrashed()->count();
+			$onlyTrashed = TRUE;
+
+		}	
+		else 
+		{
+			$posts       = Post::with('category','author')->latest()->paginate($this->limit);
+			$postCount   = Post::count();
+			$onlyTrashed = FALSE;
+		}
+
+        return view('backend.blog.index', compact('posts', 'postCount', 'onlyTrashed'));
     }
 
     /**
@@ -128,8 +138,15 @@ class BlogController extends BackendController
 		$post->restore();
 
 		return redirect()->route('blog.index')->with('message', 'Post berhasil di restore');
-
 	}
+
+	public function forceDestroy($id)
+	{
+		Post::withTrashed()->findOrFail($id)->forceDelete();
+
+		return redirect('backend/blog?status=trash')->with('message', 'Postiingan berhasil di hapus!!');
+	}
+	
     public function handleRequest($request)
     {
 		// ini bisa di ganti only kalo mas pingin only
