@@ -31,7 +31,7 @@
 			reader.readAsDataURL(file.files[0]);
 		}
 	})
-	
+
 	// hide and show input category
 	$('#add-new-cat').hide();
 	$('#add-cat-btn').click(function() {
@@ -112,8 +112,9 @@
 	// button draft	
 	$('#draft-btn').click(function(e) {
 		e.preventDefault();
-		$('#publilshed_at').val("");
-		$('#post-form').submit();	
-	});
+		$('#published').val("");
+		$('#post-form').submit();
+	});	
+
 </script>
 @endpush

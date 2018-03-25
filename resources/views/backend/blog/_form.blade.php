@@ -35,7 +35,7 @@
 					{!! $errors->first('category_id', '<p class="help-block">:message</p>') !!}
 				</div>
 				<div class="pull-right">
-           	 		<a href="#" id="add-cat-btn" class="btn btn-default btn-block">Add</a>
+           	 		<a id="add-cat-btn" class="btn btn-default btn-block">Add</a>
 				</div>
 			</div>
 
@@ -45,7 +45,7 @@
 					<div class="input-group">
 					  <input type="text" name="name" id="new_cat" class="form-control">
 					  <span class="input-group-btn">
-						<a href="#" id="add-new-btn" class="btn btn-default">
+						<a id="add-new-btn" class="btn btn-default">
 						  <i class="glyphicon glyphicon-ok"></i>
 						</a>
 					  </span>
@@ -67,7 +67,7 @@
 	 	<div class="x_content">
 			<div class="row">
 				<div class="image view view-first" style="width:224px; height:120px;">
-					 <img src="{{ ($post->image_thumb) ? $post->image_thumb : 'http://placehold.it/224x120&text=No+Image' }}" class="img" id="img" alt="...">
+					 <img src="{{ ($post->image_thumb_url) ? $post->image_thumb_url : 'http://placehold.it/224x120&text=No+Image' }}" class="img" id="img" alt="...">
 					{!! Form::file('image', ['id' => 'image', 'class' => 'image-thumb']) !!}
 				</div>
 				<div class="clearfix"></div>
@@ -88,9 +88,10 @@
 		</div>
 
 	 	<div class="x_content">
-			<div class="form-group">
+			<div class="form-group {{ $errors->has('published_at') ? 'has-error' : '' }}">
 				<div class='input-group date' id='datetimepicker1'>
-					{!! Form::text('published_at', null, ['id' => 'published_at', 'class' => 'form-control', 'placeholder' => 'Y-m-d H:i:s']) !!}
+					{!! Form::text('published_at', null, ['id' => 'published', 'class' => 'form-control', 'placeholder' => 'Y-m-d H:i:s']) !!}
+					{!! $errors->first('published_at', '<p class="help-block">:message</p>') !!}
 					<span class="input-group-addon">
 						<span class="glyphicon glyphicon-calendar"></span>
 					</span>
@@ -101,7 +102,7 @@
 
 			<div>
 				<div class="pull-left">
-					<a id="draft-btn" class="btn btn-default" href="#">Save Draft</a>
+					<a id="draft-btn" class="btn btn-default">Save Draft</a>
 				</div>
 				<div class="pull-right">
 					{!! Form::submit('Publish', ['class' => 'btn btn-primary']) !!}

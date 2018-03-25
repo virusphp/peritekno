@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Backend;
 
+
+use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
+
+use Intervention\Image\Facades\Image;
+use File;
+//use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Session; 
 use App\Post;
 use App\User;
 use App\Category;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
-
-use Intervention\Image\Facades\Image;
-use File;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Session; 
 class BlogController extends BackendController
 {
     protected $uploadPath;
@@ -52,19 +53,13 @@ class BlogController extends BackendController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
 		$data = $this->handleRequest($request);
-		dd($data);
-
+//		dd($data);
 		$newPost = $request->user()->posts()->create($data);
 
-		Session::flash('flash_notification', [
-			'level'   => 'success',
-			'message' => '<h4><i class="icon fa fa-check"></i> Berhasil !</h4> Post '.$newPost->title.' telah di Tambah.'
-		]);
-
-    	return redirect(route('blog.index'));
+    	return redirect(route('blog.index'))->with('message', 'Post berhasil dibuat!!');
     }
 
     /**
@@ -109,12 +104,7 @@ class BlogController extends BackendController
 			$this->deleteImage($oldImage);
 	  }
 
-      Session::flash('flash_notification', [
-          'level'=>'info',
-          'message'=>'<h4><i class="icon fa fa-check"></i> Berhasil !</h4> Post '.$post->title.' telah di Update.'
-      ]);
-
-      return redirect(route ('blog.index'));
+      return redirect(route ('blog.index'))->with('message', 'Post berhasil di update!!');
     }
 
     /**
@@ -129,13 +119,17 @@ class BlogController extends BackendController
         $data['image'] = $this->deleteImage($post->image);
         $post->delete();
 
-         Session::flash('flash_notification', [
-            'level'=>'danger',
-            'message'=>'<h4><i class="icon fa fa-trash-o"></i>  !</h4> Post '.$post->title.' telah di hapus.'
-        ]);
-        return redirect('route'('blog.index'));
+        return redirect('route'('blog.index'))->with('trash-message', ['Post masuk tempat sampah', $id]);
     }
 
+	public function restore($id)
+	{
+		$post = Post::withTrashed()->findOrFail($id);
+		$post->restore();
+
+		return redirect()->route('blog.index')->with('message', 'Post berhasil di restore');
+
+	}
     public function handleRequest($request)
     {
 		// ini bisa di ganti only kalo mas pingin only
@@ -147,7 +141,7 @@ class BlogController extends BackendController
 			$height    = config('cms.image.thumbnail.height');
 			$image     = $request->file('image');
 			$extension = $image->guessClientExtension();
-			$fileName  = 'blogs_' . str_random(40) . '.' . $extension;
+			$fileName  = 'blogs_' . str_random(10) . '_' .$data['slug'] . '.' . $extension;
 			$destination = $this->uploadPath;
 
 			$successUpload = Image::make($image->getRealPath())

@@ -1,13 +1,16 @@
 <?php
 
 namespace App;
-use Carbon\Carbon;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use GrahamCampbell\Markdown\Facades\Markdown;
 
 class Post extends Model
 {
+	use SoftDeletes;
+
     protected $fillable = ['author_id', 'title', 'slug', 'body', 'image', 'category_id', 'published_at', 'view_count'];
 	protected $dates = ['published_at'];
 
@@ -21,10 +24,11 @@ class Post extends Model
     	return $this->belongsTo(Category::class);
     }
 
-	public function setPublishedAtAttribute($value)
-	{
-		return $this->attributes['published_at'] = $value ?: NULL;
-	}
+ 	public function setPublishedAtAttribute($value)
+    {
+        //jika di isi maka akan berisi sesuai isi jika di kosongkan mak akan jadi null
+        $this->attributes['published_at'] = $value ? : NULL;
+    }
 
     public function getImageUrlAttribute($value)
     {
