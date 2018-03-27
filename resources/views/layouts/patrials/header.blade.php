@@ -18,6 +18,7 @@
                     <ul>
                         <li><a href="{{ '/register' }}">Gabung</a></li>
                         <li><a href="{{ '/login' }}">Masuk</a></li>
+                        <li><a href="{{ route('verified.satu') }}">verified</a></li>
                     </ul>
                 </div><!-- /.top-navigator -->
             </div><!-- /.col-md-6 -->
