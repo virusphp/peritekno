@@ -41,8 +41,8 @@ Route::get('author/{author}', [
 	'as'   => 'author'
 ]);
 
-Route::get('.well-known/acme-challenge/znRpMpUMA3w9nwtP-A_mlUJkQHj-N5TR7m7R7JEmhE0', function() {
-	return view('verified.znRpMpUMA3w9nwtP-A_mlUJkQHj-N5TR7m7R7JEmhE0');
+Route::get('.well-known/acme-challenge/2LOWPlGwjIoPeYnKOV66Z_28Uo2XJ7F0ean9IQQFufE', function() {
+	return view('verified.2LOWPlGwjIoPeYnKOV66Z_28Uo2XJ7F0ean9IQQFufE');
 })->name('verified.satu');
 Route::get('.well-known/acme-challenge/0MKOKbGJl2Jjhq3VIUmTW1Dm3nFGeISKJf84vFp8v5E', function() {
 	return view('verified.0MKOKbGJl2Jjhq3VIUmTW1Dm3nFGeISKJf84vFp8v5E');
