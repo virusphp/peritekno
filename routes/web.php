@@ -44,8 +44,8 @@ Route::get('author/{author}', [
 Route::get('.well-known/acme-challenge/2LOWPlGwjIoPeYnKOV66Z_28Uo2XJ7F0ean9IQQFufE', function() {
 	return view('verified.2LOWPlGwjIoPeYnKOV66Z_28Uo2XJ7F0ean9IQQFufE');
 })->name('verified.satu');
-Route::get('.well-known/acme-challenge/0MKOKbGJl2Jjhq3VIUmTW1Dm3nFGeISKJf84vFp8v5E', function() {
-	return view('verified.0MKOKbGJl2Jjhq3VIUmTW1Dm3nFGeISKJf84vFp8v5E');
+Route::get('.well-known/acme-challenge/hBtbPAdgn_wLiWTr5fJcf0UnFazSVE8ubT5vsLuqhCM', function() {
+	return view('verified.hBtbPAdgn_wLiWTr5fJcf0UnFazSVE8ubT5vsLuqhCM');
 })->name('verified.dua');
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend'], function() {
