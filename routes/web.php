@@ -41,10 +41,10 @@ Route::get('author/{author}', [
 	'as'   => 'author'
 ]);
 
-Route::get('./well-known/achme-chellenge/znRpMpUMA3w9nwtP-A_mlUJkQHj-N5TR7m7R7JEmhE0', function() {
+Route::get('.well-known/achme-chellenge/znRpMpUMA3w9nwtP-A_mlUJkQHj-N5TR7m7R7JEmhE0', function() {
 	return view('verified.znRpMpUMA3w9nwtP-A_mlUJkQHj-N5TR7m7R7JEmhE0');
 });
-Route::get('./well-known/achme-chellenge/0MKOKbGJl2Jjhq3VIUmTW1Dm3nFGeISKJf84vFp8v5E', function() {
+Route::get('.well-known/achme-chellenge/0MKOKbGJl2Jjhq3VIUmTW1Dm3nFGeISKJf84vFp8v5E', function() {
 	return view('verified.0MKOKbGJl2Jjhq3VIUmTW1Dm3nFGeISKJf84vFp8v5E');
 });
 
