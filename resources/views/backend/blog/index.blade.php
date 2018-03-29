@@ -42,7 +42,16 @@
 							@endif
 						</div>
 					@endif
-
+					
+					<div class="ln_solid clearfix"></div>
+					<div>
+						<div class="pull-left">
+							{!! $posts->appends( Request::query() )->render() !!}
+						</div>
+						<div class="pull-right">
+							{{ $postCount }} {{ str_plural('Item', $postCount) }}
+						</div>
+					</div>
 				</div>
 			</div>
 

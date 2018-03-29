@@ -6,7 +6,7 @@
 			<div class="title_left">
 				<ul class="breadcrumb">
 					<li><a href="{{ route('home') }}">Home</a></li>
-					<li><a href="{{ route('categories.index') }}">Post</a></li>
+					<li><a href="{{ route('blog.index') }}">Post</a></li>
 					<li class="active">Create</li>
 				</ul>
 			</div>

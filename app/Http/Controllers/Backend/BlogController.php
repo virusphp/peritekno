@@ -30,6 +30,8 @@ class BlogController extends BackendController
      */
     public function index(Request $request)
     {
+		$onlyTrashed = FALSE;
+
 		if (($status = $request->get('status')) && $status == 'trash')
 		{
 			$posts       = Post::onlyTrashed()->with('category','author')->latest()->paginate($this->limit);
@@ -37,15 +39,44 @@ class BlogController extends BackendController
 			$onlyTrashed = TRUE;
 
 		}	
+		elseif ($status == 'published') 
+		{
+			$posts       = Post::published()->with('category','author')->latest()->paginate($this->limit);
+			$postCount   = Post::published()->count();
+		}
+		elseif ($status == 'scheduled') 
+		{
+			$posts       = Post::scheduled()->with('category','author')->latest()->paginate($this->limit);
+			$postCount   = Post::scheduled()->count();
+		}
+		elseif ($status == 'draft') 
+		{
+			$posts       = Post::draft()->with('category','author')->latest()->paginate($this->limit);
+			$postCount   = Post::draft()->count();
+		}
+
 		else 
 		{
 			$posts       = Post::with('category','author')->latest()->paginate($this->limit);
 			$postCount   = Post::count();
-			$onlyTrashed = FALSE;
 		}
 
-        return view('backend.blog.index', compact('posts', 'postCount', 'onlyTrashed'));
+		$statusList = $this->statusList();
+
+
+        return view('backend.blog.index', compact('posts', 'postCount', 'onlyTrashed', 'statusList'));
     }
+
+	private function statusList()
+	{
+		return [
+			'all'       => Post::count(),
+			'published' => Post::published()->count(),
+			'scheduled' => Post::scheduled()->count(),
+			'draft'     => Post::draft()->count(),
+			'trash'     => Post::onlyTrashed()->count()
+		];
+	}
 
     /**
      * Show the form for creating a new resource.
@@ -105,11 +136,11 @@ class BlogController extends BackendController
      */
     public function update(PostRequest $request, $id)
     {
-      $post = Post::find($id);
+      $post     = Post::find($id);
 	  $oldImage = $post->image;
-      $data = $this->handleRequest($request);
-
+      $data     = $this->handleRequest($request);
       $post->update($data);
+	  
 	  if ($oldImage !== $post->image) {
 			$this->deleteImage($oldImage);
 	  }
@@ -125,9 +156,7 @@ class BlogController extends BackendController
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
-        $data['image'] = $this->deleteImage($post->image);
-        $post->delete();
+        Post::findOrFail($id)->delete();
 
         return redirect('route'('blog.index'))->with('trash-message', ['Post masuk tempat sampah', $id]);
     }
@@ -137,12 +166,15 @@ class BlogController extends BackendController
 		$post = Post::withTrashed()->findOrFail($id);
 		$post->restore();
 
-		return redirect()->route('blog.index')->with('message', 'Post berhasil di restore');
+		return redirect()->back()->with('message', 'Post berhasil di restore');
 	}
 
 	public function forceDestroy($id)
 	{
-		Post::withTrashed()->findOrFail($id)->forceDelete();
+		$post = Post::withTrashed()->findOrFail($id);
+		$post->forceDelete();
+
+		$this->deleteImage($post->image);
 
 		return redirect('backend/blog?status=trash')->with('message', 'Postiingan berhasil di hapus!!');
 	}
@@ -178,12 +210,17 @@ class BlogController extends BackendController
 		return $data;
     }
 
-    public function deleteImage($filename)
+    public function deleteImage($image)
     {
-        $path = public_path() . DIRECTORY_SEPARATOR . 'f-n/images/blogs'
-            . DIRECTORY_SEPARATOR . $filename;
-        $thumbnail = base_path() . '/public/f-n/images/blogs/thumb_'.$filename;
+		if(! empty($image)) 
+		{
+			$imagePath     = $this->uploadPath . '/' . $image;
+			$ext           = substr(strrchr($image, '.'), 1);
+			$thumbnail     = "thumb_". $image;
+			$thumbnailPath = $this->uploadPath . '/' . $thumbnail;
 
-        return File::delete($path, $thumbnail);
+			if( file_exists($imagePath) ) unlink($imagePath);
+			if( file_exists($thumbnailPath) ) unlink($thumbnailPath);
+		}
     }
 }
